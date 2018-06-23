@@ -84,5 +84,12 @@ public class PlayerMovement : MonoBehaviour
             thirdPersonCharacter.Move(Vector3.zero, false, false);
         }
     }
+
+    void OnDrawGizmos()
+    {
+        //draw movement gizmo
+        Gizmos.color = Color.black;
+        Gizmos.DrawLine(transform.position, currentClickTarget);
+    }
 }
 
