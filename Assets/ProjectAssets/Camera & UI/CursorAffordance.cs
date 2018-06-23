@@ -21,7 +21,8 @@ public class CursorAffordance : MonoBehaviour
 
     void OnDelegateCalled() // only called when layer changes
     {
-        print("CursorAffordances delegate reporting for duty!");
+        //print("CursorAffordances delegate reporting for duty!");
+        print("Cursor over new layer!");
         switch (cameraRaycaster.currentLayerHit)
         {
             case Layer.Walkable:

@@ -28,13 +28,6 @@ public class CameraRaycaster : MonoBehaviour
     void Start()
     {
         viewCamera = Camera.main;
-        layerChangeObservers += SomeLayerChangeHandler; // add to set of handling functions
-        layerChangeObservers(); // call the delegate
-    }
-
-    void SomeLayerChangeHandler()
-    {
-        print("SomeLayerChangeHandler() I handled it.");
     }
     
     void Update()
@@ -46,7 +39,12 @@ public class CameraRaycaster : MonoBehaviour
             if (hit.HasValue)
             {
                 raycastHit = hit.Value;
-                layerHit = layer;
+                if (layerHit != layer) // if layer has changed
+                {
+                    layerHit = layer;
+                    layerChangeObservers();
+                }
+                
                 return;
             }
         }
