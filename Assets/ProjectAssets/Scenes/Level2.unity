@@ -157,10 +157,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 4720300084381720, guid: 2b14e99486fff5d47b308a83a4a97431, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 130.248
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b14e99486fff5d47b308a83a4a97431, type: 2}
   m_IsPrefabParent: 0
@@ -542,18 +538,6 @@ Prefab:
     - target: {fileID: 1251660330132174, guid: a63ad87ebef75ac409d6eda009e36396, type: 2}
       propertyPath: m_Name
       value: Large Enemy (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720300084381720, guid: a63ad87ebef75ac409d6eda009e36396, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 200.359
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720300084381720, guid: a63ad87ebef75ac409d6eda009e36396, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.6449947
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720300084381720, guid: a63ad87ebef75ac409d6eda009e36396, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.6449945
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a63ad87ebef75ac409d6eda009e36396, type: 2}
