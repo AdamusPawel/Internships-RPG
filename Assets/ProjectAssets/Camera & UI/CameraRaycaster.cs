@@ -23,7 +23,7 @@ public class CameraRaycaster : MonoBehaviour
     }
 
     public delegate void OnLayerChange(); // declare new delegate type 
-    public OnLayerChange layerChangeObservers; // instantiate an observer set
+    public event OnLayerChange onLayerChange; // instantiate an observer set
 
     void Start()
     {
@@ -42,12 +42,14 @@ public class CameraRaycaster : MonoBehaviour
                 if (layerHit != layer) // if layer has changed
                 {
                     layerHit = layer;
-                    layerChangeObservers();
+                    onLayerChange();
                 }
                 
                 return;
             }
         }
+
+        // TODO consider making de-register OnLayerChanged on leaving all game scenes 
 
         // Otherwise return background hit
         raycastHit.distance = distanceToBackground;

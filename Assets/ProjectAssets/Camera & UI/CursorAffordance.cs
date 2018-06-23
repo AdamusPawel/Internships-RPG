@@ -16,10 +16,10 @@ public class CursorAffordance : MonoBehaviour
     void Start()
     {
         cameraRaycaster = GetComponent<CameraRaycaster>();
-        cameraRaycaster.layerChangeObservers += OnDelegateCalled; // registering
+        cameraRaycaster.onLayerChange += OnLayerChanged; // registering
     }
 
-    void OnDelegateCalled() // only called when layer changes
+    void OnLayerChanged() // only called when layer changes
     {
         //print("CursorAffordances delegate reporting for duty!");
         print("Cursor over new layer!");
