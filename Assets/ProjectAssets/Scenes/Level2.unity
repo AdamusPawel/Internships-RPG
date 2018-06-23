@@ -204,6 +204,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114463327407099446, guid: f8b815ac223b60546a65f53fbcc75a17,
+        type: 2}
+      propertyPath: attackMoveStopRadius
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8b815ac223b60546a65f53fbcc75a17, type: 2}
   m_IsPrefabParent: 0
