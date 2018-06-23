@@ -23,19 +23,20 @@ public class CameraRaycaster : MonoBehaviour
     }
 
     public delegate void OnLayerChange(); // declare new delegate type 
-    public OnLayerChange LayerChangeObservers; // instantiate an observer set
+    public OnLayerChange layerChangeObservers; // instantiate an observer set
 
     void Start()
     {
         viewCamera = Camera.main;
-        LayerChangeObservers += SomeLayerChangeHandler;
+        layerChangeObservers += SomeLayerChangeHandler; // add to set of handling functions
+        layerChangeObservers(); // call the delegate
     }
 
     void SomeLayerChangeHandler()
     {
-        print("I handled it.");
+        print("SomeLayerChangeHandler() I handled it.");
     }
-
+    
     void Update()
     {
         // Look for and return priority layer hit
