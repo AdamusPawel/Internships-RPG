@@ -22,7 +22,7 @@ public class CameraRaycaster : MonoBehaviour
         get { return layerHit; }
     }
 
-    public delegate void OnLayerChange(); // declare new delegate type 
+    public delegate void OnLayerChange(Layer newLayer); // declare new delegate type 
     public event OnLayerChange onLayerChange; // instantiate an observer set
 
     void Start()
@@ -42,7 +42,7 @@ public class CameraRaycaster : MonoBehaviour
                 if (layerHit != layer) // if layer has changed
                 {
                     layerHit = layer;
-                    onLayerChange();
+                    onLayerChange(layer);
                 }
                 
                 return;

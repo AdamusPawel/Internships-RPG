@@ -19,11 +19,11 @@ public class CursorAffordance : MonoBehaviour
         cameraRaycaster.onLayerChange += OnLayerChanged; // registering
     }
 
-    void OnLayerChanged() // only called when layer changes
+    void OnLayerChanged(Layer newLayer) // only called when layer changes
     {
         //print("CursorAffordances delegate reporting for duty!");
         print("Cursor over new layer!");
-        switch (cameraRaycaster.currentLayerHit)
+        switch (newLayer)
         {
             case Layer.Walkable:
                 Cursor.SetCursor(walkCursor, cursorHotspot, CursorMode.Auto);
