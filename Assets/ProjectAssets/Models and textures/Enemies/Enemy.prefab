@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 54734319593095402}
   - component: {fileID: 114021005358400902}
   - component: {fileID: 114162191161952336}
+  - component: {fileID: 195924619117521702}
   - component: {fileID: 114504877001833476}
   m_Layer: 9
   m_Name: Enemy
@@ -2761,3 +2762,24 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.08161512, y: -0.04041595, z: 0.0002907589}
     m_Extent: {x: 0.03773863, y: 0.06075971, z: 0.07119451}
   m_DirtyAABB: 0
+--- !u!195 &195924619117521702
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1251660330132174}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
