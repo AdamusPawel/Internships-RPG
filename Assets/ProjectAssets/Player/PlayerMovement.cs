@@ -1,29 +1,42 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityStandardAssets.Characters.ThirdPerson;
 using UnityStandardAssets.CrossPlatformInput;
 
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(AICharacterControl))]
 [RequireComponent(typeof (ThirdPersonCharacter))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float walkMoveStopRadius = 0.2f;
     [SerializeField] private float attackMoveStopRadius = 5f;
 
-    ThirdPersonCharacter thirdPersonCharacter;   // A reference to the ThirdPersonCharacter on the object
-    CameraRaycaster cameraRaycaster;
+    ThirdPersonCharacter thirdPersonCharacter = null;   // A reference to the ThirdPersonCharacter on the object
+    CameraRaycaster cameraRaycaster = null;
     Vector3 currentDestination, clickPoint;
+    AICharacterControl aiCharacterControl = null;
+    GameObject walkTarget = null;
+
+    // TODO solve the fight between serialize and const
+    [SerializeField] const int walkableLayerNumber = 8;
+    [SerializeField] const int enemyLayerNumber = 9;
 
     bool isInDirectMode = false;
 
-    private void Start()
+    void Start()
     {
         cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
         thirdPersonCharacter = GetComponent<ThirdPersonCharacter>();
         currentDestination = transform.position;
+        aiCharacterControl = GetComponent<AICharacterControl>();
+        walkTarget = new GameObject("WalkTarget");
+
+        cameraRaycaster.notifyMouseClickObservers += ProcessMouseClick;
     }
 
     // Fixed update is called in sync with physics
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.G)) // G for Gamepad TODO allow player to remap it later or add
         {
@@ -42,6 +55,27 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    void ProcessMouseClick(RaycastHit raycastHit, int layerHit)
+    {
+        switch (layerHit)
+        {
+            case enemyLayerNumber:
+                // navigate to enemy
+                GameObject enemy = raycastHit.collider.gameObject;
+                aiCharacterControl.SetTarget(enemy.transform);
+                break;
+            case walkableLayerNumber:
+                // navigate to place on ground
+                walkTarget.transform.position = raycastHit.point;
+                aiCharacterControl.SetTarget(walkTarget.transform);
+                break;
+            default:
+                Debug.LogWarning("Don't know how to handle mouse click for player movement.");
+                return;
+        }
+    }
+
+    // TODO make this get called again
     private void ProcessDirectMovement()
     {
         print("Direct movement");
@@ -56,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
         thirdPersonCharacter.Move(movement, false, false);
     }
 
-    /* TODO TEMPORARILY DISABLED!
+    /* TODO this is no longer needed probably
 
     private void ProcessMouseMovement()
     {
@@ -80,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         WalkToDestination();
     }
 
-    */
+   
 
     private void WalkToDestination()
     {
@@ -101,6 +135,8 @@ public class PlayerMovement : MonoBehaviour
         return destination - reductionVector;
     }
 
+    // TODO this might be later used to prototype with gizmos
+
     void OnDrawGizmos()
     {
         //draw movement gizmo
@@ -114,5 +150,6 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = new Color(255f, 0f, 0f, .5f);
         Gizmos.DrawWireSphere(transform.position, attackMoveStopRadius);
     }
+     */
 }
 
