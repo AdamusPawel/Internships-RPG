@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layerPriorities: 0900000008000000
-  distanceToBackground: 100
 --- !u!114 &114846156092593682
 MonoBehaviour:
   m_ObjectHideFlags: 1

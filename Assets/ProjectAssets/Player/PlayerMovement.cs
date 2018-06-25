@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            ProcessMouseMovement();
+            //ProcessMouseMovement();
         }
         
     }
@@ -55,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
 
         thirdPersonCharacter.Move(movement, false, false);
     }
+
+    /* TODO TEMPORARILY DISABLED!
 
     private void ProcessMouseMovement()
     {
@@ -75,9 +77,10 @@ public class PlayerMovement : MonoBehaviour
                     return;
             }
         }
-
         WalkToDestination();
     }
+
+    */
 
     private void WalkToDestination()
     {
