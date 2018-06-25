@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 75a43cca039264395b99698681e52275
+guid: d7fdf860b7a3d424d93d2b5f5096d126
 labels:
 - SceneSetup
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 0
+  mainObjectFileID: 100100000
   userData: 
   assetBundleName: scenesetup
   assetBundleVariant: 
