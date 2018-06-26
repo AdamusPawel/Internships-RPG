@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4893554851578796}
   m_Layer: 0
-  m_Name: Dirt Old Hoe
+  m_Name: Dirty Old Hoe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

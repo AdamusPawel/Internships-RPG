@@ -5,7 +5,7 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
-    [SerializeField] float MaxHealthPoints = 100f;
+    [SerializeField] float maxHealthPoints = 100f;
     [SerializeField] float chaseRadius = 6f;
     [SerializeField] float attackRadius = 4f;
     [SerializeField] float damagePerShot = 9f;
@@ -17,22 +17,24 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] GameObject projectileSocket;
 
     bool isAttacking = false;
-    float currentHealthPoints = 100f;
+    float currentHealthPoints;
 
     AICharacterControl aiCharacterControl = null;
     GameObject player = null;
 
-    public float healthAsPercentage { get { return currentHealthPoints / MaxHealthPoints; } }
+    public float healthAsPercentage { get { return currentHealthPoints / maxHealthPoints; } }
 
     public void TakeDamage(float damage)
     {
-        currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, MaxHealthPoints);
+        currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
+        if (currentHealthPoints <= 0) { Destroy(gameObject); }
     }
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         aiCharacterControl = GetComponent<AICharacterControl>();
+        currentHealthPoints = maxHealthPoints;
     }
 
     void Update()
