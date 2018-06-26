@@ -45,7 +45,13 @@ public class Enemy : MonoBehaviour, IDamageable
             isAttacking = true;
             InvokeRepeating("SpawnProjectile", 0f, secondsBetweenShots); // TODO Switch to Coroutines
         }
-        
+
+        if (distanceToPlayer > attackRadius)
+        {
+            isAttacking = false;
+            CancelInvoke();
+        }
+
         if (distanceToPlayer <= chaseRadius)
         {
             aiCharacterControl.SetTarget(player.transform);
