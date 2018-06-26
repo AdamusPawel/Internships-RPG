@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : MonoBehaviour
+{
 
-    [SerializeField] float damageCaused = 10f;
+    public float damageCaused;
+    public float projectileSpeed; // other classes can set it.
+    
 
     void OnTriggerEnter(Collider collider)
     {
