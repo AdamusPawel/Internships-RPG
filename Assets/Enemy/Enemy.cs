@@ -7,15 +7,19 @@ public class Enemy : MonoBehaviour, IDamageable
 {
 
     [SerializeField] float MaxHealthPoints = 100f;
+    [SerializeField] float chaseRadius = 6f;
+
     [SerializeField] float attackRadius = 4f;
     [SerializeField] float damagePerShot = 9f;
-    [SerializeField] float chaseRadius = 6f;
-    
+    [SerializeField] float secondsBetweenShots = 0.5f;
+
+
 
     [SerializeField] GameObject projectileToUse;
     [SerializeField] GameObject projectileSocket;
 
-    private float currentHealthPoints = 100f;
+    bool isAttacking = false;
+    float currentHealthPoints = 100f;
     AICharacterControl aiCharacterControl = null;
     GameObject player = null;
 
@@ -36,9 +40,10 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
-        if (distanceToPlayer <= attackRadius)
+        if (distanceToPlayer <= attackRadius && !isAttacking)
         {
-            SpawnProjectile(); // TODO Slow this down
+            isAttacking = true;
+            InvokeRepeating("SpawnProjectile", 0f, secondsBetweenShots); // TODO Switch to Coroutines
         }
         
         if (distanceToPlayer <= chaseRadius)
