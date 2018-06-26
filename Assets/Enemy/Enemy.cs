@@ -5,21 +5,20 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
-
     [SerializeField] float MaxHealthPoints = 100f;
     [SerializeField] float chaseRadius = 6f;
-
     [SerializeField] float attackRadius = 4f;
     [SerializeField] float damagePerShot = 9f;
     [SerializeField] float secondsBetweenShots = 0.5f;
-
-
+        
+    [SerializeField] Vector3 aimOffset = new Vector3(0, 1f, 0);
 
     [SerializeField] GameObject projectileToUse;
     [SerializeField] GameObject projectileSocket;
 
     bool isAttacking = false;
     float currentHealthPoints = 100f;
+
     AICharacterControl aiCharacterControl = null;
     GameObject player = null;
 
@@ -67,9 +66,9 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         GameObject newProjectile = Instantiate(projectileToUse, projectileSocket.transform.position, Quaternion.identity);
         Projectile projectileComponent = newProjectile.GetComponent<Projectile>();
-        projectileComponent.damageCaused = damagePerShot; // set damage
+        projectileComponent.SetDamage(damagePerShot); // set damage
 
-        Vector3 unitVectorToPlayer = (player.transform.position - projectileSocket.transform.position).normalized;
+        Vector3 unitVectorToPlayer = (player.transform.position + aimOffset - projectileSocket.transform.position).normalized;
         float projectileSpeed = projectileComponent.projectileSpeed;
         newProjectile.GetComponent<Rigidbody>().velocity = unitVectorToPlayer * projectileSpeed;
     }

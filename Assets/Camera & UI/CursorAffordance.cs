@@ -28,7 +28,7 @@ public class CursorAffordance : MonoBehaviour
     void OnLayerChanged(int newLayer) // only called when layer changes
     {
         //print("CursorAffordances delegate reporting for duty!");
-        print("Cursor over new layer!");
+        //print("Cursor over new layer!");
         switch (newLayer)
         {
             case walkableLayerNumber:
