@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 114814133849680352}
   - component: {fileID: 114504877001833476}
   m_Layer: 9
-  m_Name: Enemy
+  m_Name: Minion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2589,10 +2589,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8f0637501d9fb41b4d543af77d4fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 100
+  maxHealthPoints: 70
   chaseRadius: 6
-  attackRadius: 5
-  damagePerShot: 10
+  attackRadius: 2
+  damagePerShot: 5
   secondsBetweenShots: 1
   aimOffset: {x: 0, y: 1, z: 0}
   projectileToUse: {fileID: 1520829560612456, guid: 7e3be73538cba5149823995e32d3c05c,
@@ -2651,7 +2651,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 6894ef2cd7a77c6479d27e9c1559298b, type: 2}
+  - {fileID: 2100000, guid: 23e4f202e4e5a5b49a726334d17f3c80, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2821,7 +2821,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 50
