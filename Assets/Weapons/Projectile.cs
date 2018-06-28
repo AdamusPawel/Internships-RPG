@@ -2,26 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
-{
+public class Projectile : MonoBehaviour {
 
-    
-    public float projectileSpeed; // other classes can set it.
+    [SerializeField] float projectileSpeed;
+    [SerializeField] GameObject shooter; // So can inspected when paused
+
+    const float DESTROY_DELAY = 0.01f;
     float damageCaused;
+
+    public void SetShooter(GameObject shooter)
+    {
+        this.shooter = shooter;
+    }
 
     public void SetDamage(float damage)
     {
         damageCaused = damage;
     }
 
+    public float GetDefaultLaunchSpeed()
+    {
+        return projectileSpeed;
+    }
+
     void OnCollisionEnter(Collision collision)
     {
-        Component damageableComponent = collision.gameObject.GetComponent(typeof(IDamageable));
-        print("Damageable component" + damageableComponent);
-        if (damageableComponent)
+        var layerCollidedWith = collision.gameObject.layer;
+        if (layerCollidedWith != shooter.layer)
         {
-            (damageableComponent as IDamageable).TakeDamage(damageCaused);
+            DamageIfDamageable(collision);
+        }        
+    }
+
+    private void DamageIfDamageable(Collision collision)
+    {
+        Component damagableComponent = collision.gameObject.GetComponent(typeof(IDamageable));
+        if (damagableComponent)
+        {
+            (damagableComponent as IDamageable).TakeDamage(damageCaused);
         }
-        Destroy(gameObject, 0.01f);
+        Destroy(gameObject, DESTROY_DELAY);
     }
 }
