@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using RPG.CameraUI;
 using RPG.Core;
-using RPG.Weapons;
-// TODO consider re-wiring
+using RPG.Weapons; // TODO consider re-wiring
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -19,6 +18,7 @@ namespace RPG.Characters
         [SerializeField] float minTimeBetweenHits = .5f;
         [SerializeField] float maxAttackRange = 2f;
         [SerializeField] Weapon weaponInUse;
+        [SerializeField] AnimatorOverrideController animatorOverrideController;
 
         float currentHealthPoints;
         CameraRaycaster cameraRaycaster;
@@ -29,8 +29,21 @@ namespace RPG.Characters
         void Start()
         {
             RegisterForMouseClick();
-            currentHealthPoints = maxHealthPoints;
+            SetCurrentMaxHealth();
             PutWeaponInHand();
+            OverrideAnimatorController();
+        }
+
+        private void SetCurrentMaxHealth()
+        {
+            currentHealthPoints = maxHealthPoints;
+        }
+
+        private void OverrideAnimatorController()
+        {
+            var animator = GetComponent<Animator>();
+            animator.runtimeAnimatorController = animatorOverrideController;
+            animatorOverrideController["DEFAULT ATTACK"] = weaponInUse.GetAttackAnimClip(); // TODO Remove const
         }
 
         private void PutWeaponInHand()
