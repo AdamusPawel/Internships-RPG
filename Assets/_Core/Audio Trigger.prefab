@@ -54,5 +54,5 @@ MonoBehaviour:
   clip: {fileID: 0}
   layerFilter: 11
   triggerRadius: 3
-  isOneTimeOnly: 0
-  hasPlayed: 0
+  isOneTimeOnly: 1
+  hasPlayed: 1
