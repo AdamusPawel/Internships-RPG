@@ -30,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.4, y: 10.4, z: -70.8}
+  m_LocalPosition: {x: 40.433, y: 10.4, z: -70.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4032402743314716}
@@ -130,6 +130,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4888794846225544}
+  - component: {fileID: 114656740807461704}
   m_Layer: 11
   m_Name: Hand_R
   m_TagString: Untagged
@@ -386,7 +387,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4411232803431370}
-  - component: {fileID: 114446483106779698}
   m_Layer: 11
   m_Name: Hand_L
   m_TagString: Untagged
@@ -713,17 +713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb75cb33cc6f884db40fe6cec105d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114446483106779698
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1718813421843222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610f816287df94a478980beb4ea34d2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114633348878164724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -738,11 +727,20 @@ MonoBehaviour:
   enemyLayer: 9
   maxHealthPoints: 1000
   damagePerHit: 50
-  minTimeBetweenHits: 1
-  maxAttackRange: 2
-  weaponInUse: {fileID: 11400000, guid: ce7775877fb709346bbf849923cc4dde, type: 2}
+  weaponInUse: {fileID: 11400000, guid: 23c2f23770a711b4db9c26b14c916028, type: 2}
   animatorOverrideController: {fileID: 22100000, guid: 6d315d916e0fe3248966a191e0b18683,
     type: 2}
+--- !u!114 &114656740807461704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1091398652634248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610f816287df94a478980beb4ea34d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114978401065010746
 MonoBehaviour:
   m_ObjectHideFlags: 1
