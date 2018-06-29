@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace RPG.CameraUI
 {
@@ -21,5 +19,6 @@ namespace RPG.CameraUI
             transform.position = player.transform.position;
         }
     }
+
 }
 

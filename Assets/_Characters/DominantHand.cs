@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 
-public class DominantHand : MonoBehaviour {
+namespace RPG.Characters
+{
+    public class DominantHand : MonoBehaviour
+    {
 
-    // Add to dominant hand on character prefab
+        // Add to dominant hand on character prefab
 
+    }
 }
