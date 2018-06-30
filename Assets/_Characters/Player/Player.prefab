@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 114272382486777280}
   - component: {fileID: 114978401065010746}
   - component: {fileID: 114633348878164724}
+  - component: {fileID: 114682313052787590}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -741,6 +742,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610f816287df94a478980beb4ea34d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114682313052787590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 767b1148a5dd9ad4aa29e9a5fb43be3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyBar: {fileID: 0}
+  maxEnergyPoints: 100
 --- !u!114 &114978401065010746
 MonoBehaviour:
   m_ObjectHideFlags: 1

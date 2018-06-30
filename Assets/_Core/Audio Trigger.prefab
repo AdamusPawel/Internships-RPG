@@ -55,4 +55,4 @@ MonoBehaviour:
   layerFilter: 11
   triggerRadius: 3
   isOneTimeOnly: 1
-  hasPlayed: 1
+  hasPlayed: 0
