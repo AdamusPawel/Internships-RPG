@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4215672616079480}
   - component: {fileID: 137874012473195888}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Soldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,6 +366,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1929991208563762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4588058923546056}
+  - component: {fileID: 114339856980681058}
+  m_Layer: 0
+  m_Name: Audio Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1980165660108936
 GameObject:
   m_ObjectHideFlags: 1
@@ -509,13 +525,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047003344575756}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -11, y: 0, z: -17}
+  m_LocalRotation: {x: -0, y: 0.94037, z: -0, w: 0.34015328}
+  m_LocalPosition: {x: 30.507, y: 10.028168, z: -63.773}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4732312748870476}
   - {fileID: 4249505491923438}
   - {fileID: 4768758493313984}
+  - {fileID: 4588058923546056}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -573,6 +590,19 @@ Transform:
   - {fileID: 4662016506565638}
   m_Father: {fileID: 4955827919454296}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4588058923546056
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1929991208563762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4472708331571896}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4604288327979338
 Transform:
@@ -787,6 +817,22 @@ MonoBehaviour:
     type: 2}
   projectileSocket: {fileID: 1092267038565084}
   aimOffset: {x: 0, y: 1, z: 0}
+--- !u!114 &114339856980681058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1929991208563762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2854fa11cf88b104aad886375aa1ea7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 92b8b3b9ee965864f89273048e909da1, type: 3}
+  layerFilter: 11
+  triggerRadius: 3
+  isOneTimeOnly: 1
+  hasPlayed: 0
 --- !u!114 &114369979630671020
 MonoBehaviour:
   m_ObjectHideFlags: 1

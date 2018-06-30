@@ -14,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - Walkable
+  - Potentially Walkable
   - Enemy
   - Stiff
   - Player

@@ -1,28 +1,26 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using RPG.CameraUI;
-using RPG.Core;
-using RPG.Weapons; // TODO consider re-wiring
 using UnityEngine;
 using UnityEngine.Assertions;
+
+// TODO consider re-wire...
+using RPG.CameraUI;
+using RPG.Core;
+using RPG.Weapons;
 
 namespace RPG.Characters
 {
     public class Player : MonoBehaviour, IDamageable
     {
-
-        [SerializeField] int enemyLayer = 9;
         [SerializeField] float maxHealthPoints = 100f;
         [SerializeField] float damagePerHit = 10f;
-       
         [SerializeField] Weapon weaponInUse = null;
         [SerializeField] AnimatorOverrideController animatorOverrideController = null;
 
         Animator animator;
-        CameraRaycaster cameraRaycaster;
-
         float currentHealthPoints;
+        CameraRaycaster cameraRaycaster;
         float lastHitTime = 0f;
 
         public float healthAsPercentage { get { return currentHealthPoints / maxHealthPoints; } }
@@ -49,7 +47,7 @@ namespace RPG.Characters
         {
             animator = GetComponent<Animator>();
             animator.runtimeAnimatorController = animatorOverrideController;
-            animatorOverrideController["DEFAULT ATTACK"] = weaponInUse.GetAttackAnimClip(); // TODO Remove const
+            animatorOverrideController["DEFAULT ATTACK"] = weaponInUse.GetAttackAnimClip(); // remove const
         }
 
         private void PutWeaponInHand()
@@ -72,31 +70,24 @@ namespace RPG.Characters
 
         private void RegisterForMouseClick()
         {
-            cameraRaycaster = FindObjectOfType<CameraRaycaster>();
-            cameraRaycaster.notifyMouseClickObservers += OnMouseClick;
+            cameraRaycaster = FindObjectOfType<CameraUI.CameraRaycaster>();
+            cameraRaycaster.onMouseOverEnemy += OnMouseOverEnemy;
         }
 
-        // TODO refactor to reduce number of lines
-        void OnMouseClick(RaycastHit raycastHit, int layerHit)
+        void OnMouseOverEnemy(Enemy enemy)
         {
-            if (layerHit == enemyLayer)
+            if (Input.GetMouseButton(0) && IsTargetInRange(enemy.gameObject))
             {
-                var enemy = raycastHit.collider.gameObject;
-
-                if (IsTargetInRange(enemy))
-                {
-                    AttackTarget(enemy);
-                }
+                AttackTarget(enemy);
             }
         }
 
-        private void AttackTarget(GameObject target)
+        private void AttackTarget(Enemy enemy)
         {
-            var enemyComponent = target.GetComponent<Enemy>();
             if (Time.time - lastHitTime > weaponInUse.GetMinTimeBetweenHits())
             {
-                animator.SetTrigger("Attack"); //TODO make const
-                enemyComponent.TakeDamage(damagePerHit);
+                animator.SetTrigger("Attack"); // TODO make const
+                enemy.TakeDamage(damagePerHit);
                 lastHitTime = Time.time;
             }
         }
@@ -104,7 +95,7 @@ namespace RPG.Characters
         private bool IsTargetInRange(GameObject target)
         {
             float distanceToTarget = (target.transform.position - transform.position).magnitude;
-            return distanceToTarget <= weaponInUse.GetMaxAttackRange();  
+            return distanceToTarget <= weaponInUse.GetMaxAttackRange();
         }
     }
 }
