@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using RPG.Core; // TODO consider re-wiring
-using RPG.Weapons;
 using UnityEngine;
-using UnityStandardAssets.Characters.ThirdPerson;
+
+// TODO consider re-wire
+using RPG.Core;
+using RPG.Weapons;
 
 namespace RPG.Characters
 {
     public class Enemy : MonoBehaviour, IDamageable
     {
+
         [SerializeField] float maxHealthPoints = 100f;
         [SerializeField] float chaseRadius = 6f;
 

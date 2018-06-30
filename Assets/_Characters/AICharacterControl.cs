@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
 
-// TODO change to RPG.Characters
-namespace UnityStandardAssets.Characters.ThirdPerson
+namespace RPG.Characters
 {
-    [RequireComponent(typeof (UnityEngine.AI.NavMeshAgent))]
-    [RequireComponent(typeof (ThirdPersonCharacter))]
+    [RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
+    [RequireComponent(typeof(ThirdPersonCharacter))]
     public class AICharacterControl : MonoBehaviour
     {
         public UnityEngine.AI.NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
@@ -19,8 +18,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             agent = GetComponentInChildren<UnityEngine.AI.NavMeshAgent>();
             character = GetComponent<ThirdPersonCharacter>();
 
-	        agent.updateRotation = false;
-	        agent.updatePosition = true;
+            agent.updateRotation = false;
+            agent.updatePosition = true;
         }
 
 
@@ -30,9 +29,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 agent.SetDestination(target.position);
 
             if (agent.remainingDistance > agent.stoppingDistance)
+            {
                 character.Move(agent.desiredVelocity, false, false);
+            }
             else
+            {
+                if (GetComponent<Enemy>())
+                {
+                    agent.velocity = Vector3.zero;
+                }
                 character.Move(Vector3.zero, false, false);
+            }
         }
 
 
