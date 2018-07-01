@@ -730,7 +730,19 @@ MonoBehaviour:
   weaponInUse: {fileID: 11400000, guid: 23c2f23770a711b4db9c26b14c916028, type: 2}
   animatorOverrideController: {fileID: 22100000, guid: 6d315d916e0fe3248966a191e0b18683,
     type: 2}
-  abilities: []
+  damageSounds:
+  - {fileID: 8300000, guid: 5a5acccc40099774c8af9858409ded3a, type: 3}
+  - {fileID: 8300000, guid: 856249e521147bf45ae24fa0d9511046, type: 3}
+  - {fileID: 8300000, guid: df7c090a3a10dae4db4ea18bd364bcd0, type: 3}
+  - {fileID: 8300000, guid: 072c704a01441f2449aeae489debf477, type: 3}
+  - {fileID: 8300000, guid: 9a6852150a88f4245bf306d1ad2a5761, type: 3}
+  - {fileID: 8300000, guid: d7f1a7647367b2e4c91a1c3d8d3dde13, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: ca707be9d492d5548a3f643b3e088927, type: 3}
+  - {fileID: 8300000, guid: 25e1ebe26d42b76469ecaacee25e3ff3, type: 3}
+  - {fileID: 8300000, guid: 89b0d678fae8858488da942e68fae47a, type: 3}
+  abilities:
+  - {fileID: 11400000, guid: c21100d198b3866429684f0c57ea5015, type: 2}
 --- !u!114 &114656740807461704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -755,6 +767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energyBar: {fileID: 0}
   maxEnergyPoints: 100
+  regenPointsPerSecond: 1
 --- !u!114 &114978401065010746
 MonoBehaviour:
   m_ObjectHideFlags: 1
