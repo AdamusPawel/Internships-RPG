@@ -1,14 +1,15 @@
-﻿﻿using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Characters;
 using RPG.Core;
 using System;
 
-public class AreaEffectBehaviour : MonoBehaviour, ISpecialAbility {
+public class AreaEffectBehaviour : AbilityBehaviour
+{
 
     AreaEffectConfig config;
-	AudioSource audioSource = null;
+    AudioSource audioSource = null;
 
     void Start()
     {
@@ -20,12 +21,12 @@ public class AreaEffectBehaviour : MonoBehaviour, ISpecialAbility {
         this.config = configToSet;
     }
 
-    public void Use(AbilityUseParams useParams)
+    public override void Use(AbilityUseParams useParams)
     {
         DealRadialDamage(useParams);
         PlayParticleEffect();
-		audioSource.clip = config.GetAudioClip();
-		audioSource.Play();
+        audioSource.clip = config.GetAudioClip();
+        audioSource.Play();
     }
 
     private void PlayParticleEffect()

@@ -1,13 +1,13 @@
-﻿﻿﻿using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace RPG.Characters
 {
-    public class PowerAttackBehaviour : MonoBehaviour, ISpecialAbility
+    public class PowerAttackBehaviour : AbilityBehaviour
     {
         PowerAttackConfig config;
-		AudioSource audioSource = null;
+        AudioSource audioSource = null;
 
         public void SetConfig(PowerAttackConfig configToSet)
         {
@@ -27,24 +27,24 @@ namespace RPG.Characters
 
         }
 
-        public void Use(AbilityUseParams useParams)
+        public override void Use(AbilityUseParams useParams)
         {
             print("Power attack used by: " + gameObject.name);
             DealDamage(useParams);
             PlayParticleEffect(); // TODO find way of moving audio to parent class
-			audioSource.clip = config.GetAudioClip();
-			audioSource.Play();
+            audioSource.clip = config.GetAudioClip();
+            audioSource.Play();
         }
 
-		private void PlayParticleEffect()
-		{
+        private void PlayParticleEffect()
+        {
             var particlePrefab = config.GetParticlePrefab();
             var prefab = Instantiate(particlePrefab, transform.position, particlePrefab.transform.rotation);
             // TODO decide if particle system attaches to player
             ParticleSystem myParticleSystem = prefab.GetComponent<ParticleSystem>();
-			myParticleSystem.Play();
-			Destroy(prefab, myParticleSystem.main.duration);
-		}
+            myParticleSystem.Play();
+            Destroy(prefab, myParticleSystem.main.duration);
+        }
 
         private void DealDamage(AbilityUseParams useParams)
         {
