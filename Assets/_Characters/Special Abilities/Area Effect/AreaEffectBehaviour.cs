@@ -1,14 +1,19 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Characters;
 using RPG.Core;
 using System;
 
-public class AreaEffectBehaviour : MonoBehaviour, ISpecialAbility
-{
+public class AreaEffectBehaviour : MonoBehaviour, ISpecialAbility {
 
     AreaEffectConfig config;
+	AudioSource audioSource = null;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void SetConfig(AreaEffectConfig configToSet)
     {
@@ -19,11 +24,14 @@ public class AreaEffectBehaviour : MonoBehaviour, ISpecialAbility
     {
         DealRadialDamage(useParams);
         PlayParticleEffect();
+		audioSource.clip = config.GetAudioClip();
+		audioSource.Play();
     }
 
     private void PlayParticleEffect()
     {
-        var prefab = Instantiate(config.GetParticlePrefab(), transform.position, Quaternion.identity);
+        var particlePrefab = config.GetParticlePrefab();
+        var prefab = Instantiate(particlePrefab, transform.position, particlePrefab.transform.rotation);
         // TODO decide if particle system attaches to player
         ParticleSystem myParticleSystem = prefab.GetComponent<ParticleSystem>();
         myParticleSystem.Play();
@@ -47,7 +55,7 @@ public class AreaEffectBehaviour : MonoBehaviour, ISpecialAbility
             if (damageable != null && !hitPlayer)
             {
                 float damageToDeal = useParams.baseDamage + config.GetDamageToEachTarget(); // TODO ok Rick?
-                damageable.AdjustHealth(damageToDeal);
+                damageable.TakeDamage(damageToDeal);
             }
         }
     }

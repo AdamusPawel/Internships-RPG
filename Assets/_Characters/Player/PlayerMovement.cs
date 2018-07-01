@@ -31,9 +31,9 @@ namespace RPG.Characters
         {
             if (Input.GetMouseButton(0))
             {
-                walkTarget.transform.position = destination;
-                aiCharacterControl.SetTarget(walkTarget.transform);
-            }
+				walkTarget.transform.position = destination;
+				aiCharacterControl.SetTarget(walkTarget.transform);  
+            }    
         }
 
         void OnMouseOverEnemy(Enemy enemy)

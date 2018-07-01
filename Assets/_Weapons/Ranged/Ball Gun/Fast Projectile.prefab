@@ -67,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093317976226508}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.8, y: 1.15, z: -24.5}
-  m_LocalScale: {x: 0.36257517, y: 0.36257517, z: 0.36257517}
+  m_LocalPosition: {x: 10.810638, y: 0.44, z: 7.857483}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4230775063793106}
   m_Father: {fileID: 0}
@@ -83,11 +83,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 4b5dce0492bdfb648a389fe390071625, type: 2}
   m_StaticBatchInfo:
@@ -100,7 +98,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -141,11 +138,9 @@ TrailRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 2ed79c4c08a5982468a27a8ae0973fe5, type: 2}
   m_StaticBatchInfo:
@@ -158,7 +153,6 @@ TrailRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -174,15 +168,12 @@ TrailRenderer:
     widthCurve:
       serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
+      - serializedVersion: 2
         time: 0
         value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -219,7 +210,6 @@ TrailRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-    generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
 --- !u!114 &114796729587127504
@@ -233,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1259fd4d21b427d418cd929a763f9a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 100
+  projectileSpeed: 40
   shooter: {fileID: 0}
 --- !u!135 &135751444114828454
 SphereCollider:

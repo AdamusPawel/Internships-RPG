@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4008680106485982}
   - component: {fileID: 33165938637922402}
   - component: {fileID: 23612780236380612}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4315227267876238}
   - component: {fileID: 65675455346909756}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Medium Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,11 +80,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 2e93e6f613f4ee44a9904d5733bf9972, type: 2}
   m_StaticBatchInfo:
@@ -97,14 +95,12 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33165938637922402
 MeshFilter:
