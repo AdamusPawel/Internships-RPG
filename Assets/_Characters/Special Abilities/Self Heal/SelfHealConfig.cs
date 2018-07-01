@@ -6,20 +6,18 @@ namespace RPG.Characters
 {
     [CreateAssetMenu(menuName = ("RPG/Special Abiltiy/Self Heal"))]
     public class SelfHealConfig : AbilityConfig
-	{
-		[Header("Self Heal Specific")]
-		[SerializeField] float extraHealth = 50f;
+    {
+        [Header("Self Heal Specific")]
+        [SerializeField] float extraHealth = 50f;
 
-		public override void AttachComponentTo(GameObject gameObjectToattachTo)
-		{
-			var behviourComponent = gameObjectToattachTo.AddComponent<SelfHealBehaviour>();
-			behviourComponent.SetConfig(this);
-			behaviour = behviourComponent;
-		}
+        public override AbilityBehaviour GetBehaviourComponent(GameObject objectToAttachTo)
+        {
+            return objectToAttachTo.AddComponent<SelfHealBehaviour>();
+        }
 
-		public float GetExtraHealth()
-		{
-			return extraHealth;
-		}
-	}
+        public float GetExtraHealth()
+        {
+            return extraHealth;
+        }
+    }
 }

@@ -1,4 +1,4 @@
-﻿﻿﻿﻿using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +22,7 @@ namespace RPG.Characters
         [SerializeField] AudioClip[] deathSounds;
         [Range(.1f, 1.0f)] [SerializeField] float criticalHitChance = 0.1f;
         [SerializeField] float criticalHitMultiplier = 1.25f;
-		[SerializeField] ParticleSystem criticalHitParticle = null;
+        [SerializeField] ParticleSystem criticalHitParticle = null;
 
         // Temporarily serialized for dubbing
         [SerializeField] AbilityConfig[] abilities;
@@ -41,7 +41,7 @@ namespace RPG.Characters
 
         void Start()
         {
-			audioSource = GetComponent<AudioSource>();
+            audioSource = GetComponent<AudioSource>();
 
             RegisterForMouseClick();
             SetCurrentMaxHealth();
@@ -54,7 +54,7 @@ namespace RPG.Characters
         {
             for (int abilityIndex = 0; abilityIndex < abilities.Length; abilityIndex++)
             {
-                abilities[abilityIndex].AttachComponentTo(gameObject);
+                abilities[abilityIndex].AttachAbilityTo(gameObject);
             }
         }
 
@@ -79,9 +79,9 @@ namespace RPG.Characters
 
         public void TakeDamage(float damage)
         {
-			currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
-			audioSource.clip = damageSounds[UnityEngine.Random.Range(0, damageSounds.Length)];
-			audioSource.Play();        
+            currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
+            audioSource.clip = damageSounds[UnityEngine.Random.Range(0, damageSounds.Length)];
+            audioSource.Play();
             if (currentHealthPoints <= 0)
             {
                 StartCoroutine(KillPlayer());
@@ -95,14 +95,14 @@ namespace RPG.Characters
 
         IEnumerator KillPlayer()
         {
-			animator.SetTrigger(DEATH_TRIGGER);
+            animator.SetTrigger(DEATH_TRIGGER);
 
             audioSource.clip = deathSounds[UnityEngine.Random.Range(0, deathSounds.Length)];
-			audioSource.Play();
+            audioSource.Play();
             yield return new WaitForSecondsRealtime(audioSource.clip.length);
 
             SceneManager.LoadScene(0);
-		}
+        }
 
         private void SetCurrentMaxHealth()
         {
