@@ -1,8 +1,8 @@
-﻿﻿using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPG.Weapons
+namespace RPG.Characters
 {
     [CreateAssetMenu(menuName = ("RPG/Weapon"))]
     public class Weapon : ScriptableObject
@@ -31,7 +31,7 @@ namespace RPG.Weapons
         {
             return weaponPrefab;
         }
-        
+
         public AnimationClip GetAttackAnimClip()
         {
             RemoveAnimationEvents();
