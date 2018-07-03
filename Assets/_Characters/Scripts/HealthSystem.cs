@@ -21,6 +21,7 @@ namespace RPG.Characters
         Animator animator;
         AudioSource audioSource;
         Character characterMovement;
+        EnemyAI enemyAi;
 
         public float healthAsPercentage { get { return currentHealthPoints / maxHealthPoints; } }
 
@@ -29,6 +30,7 @@ namespace RPG.Characters
             animator = GetComponent<Animator>();
             audioSource = GetComponent<AudioSource>();
             characterMovement = GetComponent<Character>();
+            enemyAi = GetComponent<EnemyAI>();
 
             currentHealthPoints = maxHealthPoints;
         }
@@ -66,6 +68,7 @@ namespace RPG.Characters
         IEnumerator KillCharacter()
         {
             characterMovement.Kill();
+            enemyAi.enabled = false;
             animator.SetTrigger(DEATH_TRIGGER);
 
             audioSource.clip = deathSounds[UnityEngine.Random.Range(0, deathSounds.Length)];
