@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.088638164, g: 0.28292742, b: 0.48432153, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5000,7 +5000,7 @@ RectTransform:
   m_Children:
   - {fileID: 1017546927}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10982,6 +10982,52 @@ Transform:
   m_Father: {fileID: 1066670175}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &654977399
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400002, guid: d0882da95153541c09fc1451e68b2ec1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.7793884
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: d0882da95153541c09fc1451e68b2ec1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: d0882da95153541c09fc1451e68b2ec1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.563904
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: d0882da95153541c09fc1451e68b2ec1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: d0882da95153541c09fc1451e68b2ec1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: d0882da95153541c09fc1451e68b2ec1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: d0882da95153541c09fc1451e68b2ec1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: d0882da95153541c09fc1451e68b2ec1, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: d0882da95153541c09fc1451e68b2ec1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8b67240cbd60c7488908be1e8d1fcbc, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d0882da95153541c09fc1451e68b2ec1, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &673512339
 GameObject:
   m_ObjectHideFlags: 0
@@ -11341,7 +11387,7 @@ Transform:
   - {fileID: 771613494}
   - {fileID: 1759188015}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &771613493
 GameObject:
@@ -12399,7 +12445,7 @@ Transform:
   - {fileID: 268127541}
   - {fileID: 271769989}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1124299802
 MonoBehaviour:
@@ -13347,7 +13393,7 @@ Transform:
   - {fileID: 833185414}
   - {fileID: 1433651363}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1670162706
 GameObject:
@@ -13631,7 +13677,7 @@ Transform:
   - {fileID: 1628180928}
   - {fileID: 460050714}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1740749092
 GameObject:
@@ -14195,7 +14241,7 @@ RectTransform:
   - {fileID: 116050287}
   - {fileID: 1321873284}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14717,7 +14763,7 @@ RectTransform:
   - {fileID: 370083734}
   - {fileID: 1924806875}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

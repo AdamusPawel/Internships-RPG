@@ -3,8 +3,28 @@ guid: 7923e2ea8b315e34fa6cd63a1d052960
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
+    100000: Chocolate_box
+    100002: //RootNode
+    100004: Chocolatebox_Base1
+    100006: Chocolatebox_lid1
+    100008: transform1
+    100010: transform2
+    400000: Chocolate_box
+    400002: //RootNode
+    400004: Chocolatebox_Base1
+    400006: Chocolatebox_lid1
+    400008: transform1
+    400010: transform2
+    2300000: Chocolate_box
+    3300000: Chocolate_box
     4300000: Chocolate_box
-  externalObjects: {}
+    11100000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Valentines_Mat
+    second: {fileID: 2100000, guid: 895edb0afbfa81944a1f2fae9f644d6a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
