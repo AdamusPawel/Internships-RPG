@@ -381,7 +381,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 961769586}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4781271297378068, guid: 084dbcc6915f72c468cf3b1d8744b1af, type: 2}
       propertyPath: m_LocalPosition.x
@@ -413,7 +413,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4781271297378068, guid: 084dbcc6915f72c468cf3b1d8744b1af, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 108274869467067408, guid: 084dbcc6915f72c468cf3b1d8744b1af,
         type: 2}
@@ -459,7 +459,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2129451885}
-  - {fileID: 1384866446}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -641,11 +640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f38397a5b56d9b44b4c13df92053e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1384866446 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4781271297378068, guid: 084dbcc6915f72c468cf3b1d8744b1af,
-    type: 2}
-  m_PrefabInternal: {fileID: 786481959}
 --- !u!1 &1502638894
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,7 +906,7 @@ GameObject:
   - component: {fileID: 2129451885}
   - component: {fileID: 2129451884}
   - component: {fileID: 2129451883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
