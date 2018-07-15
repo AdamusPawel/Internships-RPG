@@ -10,7 +10,8 @@ namespace RPG.CameraUI
     {
 		[SerializeField] Texture2D walkCursor = null;
         [SerializeField] Texture2D enemyCursor = null;
-		[SerializeField] Vector2 cursorHotspot = new Vector2(0, 0);
+        [SerializeField] Texture2D interactableCursor = null;
+        [SerializeField] Vector2 cursorHotspot = new Vector2(0, 0);
 
         const int POTENTIALLY_WALKABLE_LAYER = 8;
         float maxRaycastDepth = 100f; // Hard coded value
@@ -23,7 +24,10 @@ namespace RPG.CameraUI
 		public delegate void OnMouseOverTerrain(Vector3 destination);
         public event OnMouseOverTerrain onMouseOverPotentiallyWalkable;
 
-		void Update()
+        public delegate void OnMouseOverInteractable(Interactable interactable);
+        public event OnMouseOverInteractable onMouseOverInteractable;
+
+        void Update()
         {
             currentScrenRect = new Rect(0, 0, Screen.width, Screen.height);
 
@@ -31,6 +35,7 @@ namespace RPG.CameraUI
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 // Impliment UI interaction
+                PerformRaycasts();
             }
             else
             {
@@ -44,8 +49,10 @@ namespace RPG.CameraUI
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 // Specify layer priorities below, order matters
+                if (RaycastForInteractable(ray)) { return; }
                 if (RaycastForEnemy(ray)) { return; }
                 if (RaycastForPotentiallyWalkable(ray)) { return; }
+                
             }
 		}
 
@@ -73,6 +80,20 @@ namespace RPG.CameraUI
             {
                 Cursor.SetCursor(walkCursor, cursorHotspot, CursorMode.Auto);
                 onMouseOverPotentiallyWalkable(hitInfo.point);
+                return true;
+            }
+            return false;
+        }
+        private bool RaycastForInteractable(Ray ray)
+        {
+            RaycastHit hitInfo;
+            Physics.Raycast(ray, out hitInfo, maxRaycastDepth);
+            var gameObjectHit = hitInfo.collider.gameObject;
+            var interactableHit = gameObjectHit.GetComponent<Interactable>();
+            if (interactableHit)
+            {
+                Cursor.SetCursor(interactableCursor, cursorHotspot, CursorMode.Auto);
+                onMouseOverInteractable(interactableHit);
                 return true;
             }
             return false;

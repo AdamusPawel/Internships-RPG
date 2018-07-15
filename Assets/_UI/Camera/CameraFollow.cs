@@ -32,7 +32,7 @@ namespace RPG.CameraUI
 
             transform.RotateAround(target.position, Vector3.up, currentYaw);
 
-            Debug.Log("Current zoom = " + currentZoom + ", current yaw = " + currentYaw % 360);
+            //Debug.Log("Current zoom = " + currentZoom + ", current yaw = " + currentYaw % 360);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using RPG.CameraUI; // for mouse events
 
@@ -24,6 +25,7 @@ namespace RPG.Characters
             var cameraRaycaster = FindObjectOfType<CameraRaycaster>();
             cameraRaycaster.onMouseOverEnemy += OnMouseOverEnemy;
             cameraRaycaster.onMouseOverPotentiallyWalkable += OnMouseOverPotentiallyWalkable;
+            cameraRaycaster.onMouseOverInteractable += OnMouseOverInteractable;
         }
 
         void Update()
@@ -74,6 +76,15 @@ namespace RPG.Characters
             else if (Input.GetMouseButtonDown(1) && !IsTargetInRange(enemy.gameObject))
             {
                 StartCoroutine(MoveAndPowerAttack(enemy));
+            }
+        }
+
+        void OnMouseOverInteractable(Interactable interactable)
+        {
+            if (Input.GetMouseButton(1))
+            {
+                weaponSystem.StopAttacking();
+                Debug.Log("Interacting with " + transform.name);  //TODO it should be called by isFocus
             }
         }
 
