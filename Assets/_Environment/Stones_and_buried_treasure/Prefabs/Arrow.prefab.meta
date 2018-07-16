@@ -1,8 +1,13 @@
 fileFormatVersion: 2
 guid: edf92e08fbab517449067fd9cddc8a66
-timeCreated: 1500052620
-licenseType: Store
+labels:
+- Lowpoly
+- Object
+- Ranged
+- Weapon
+- Wood
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

@@ -1,22 +1,20 @@
 fileFormatVersion: 2
 guid: 5254343140b1ee5408a6975dd9acbc4b
 labels:
-- 3d
-- lowpoly
-- handpainted
-- hand-painted
-- RPG
-- fantasy
 - brazier
+- fantasy
+- hand-painted
+- handpainted
 - light
-- medieval
-- wow
-- painted
 - lightsource
+- lowpoly
+- medieval
+- painted
 - topdown
-timeCreated: 1432324082
-licenseType: Store
+- wow
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

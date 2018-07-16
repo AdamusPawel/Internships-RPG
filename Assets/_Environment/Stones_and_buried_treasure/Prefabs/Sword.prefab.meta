@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: b116d663e63776b498d940fc62356957
-timeCreated: 1500052770
-licenseType: Store
+labels:
+- Lowpoly
+- Sword
+- Weapon
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

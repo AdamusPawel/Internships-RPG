@@ -1,8 +1,10 @@
 fileFormatVersion: 2
 guid: dd046ecebb503e348ac955d2c5fc90c2
-timeCreated: 1493418271
-licenseType: Free
+labels:
+- Cart
+- Wood
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

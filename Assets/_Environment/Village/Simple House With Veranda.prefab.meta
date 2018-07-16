@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: 614d11320b817c04685ec13aef76aa3a
-timeCreated: 1489028555
-licenseType: Free
+labels:
+- Building
+- House
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -1,8 +1,10 @@
 fileFormatVersion: 2
 guid: e745df1298631f24789a1313146ae9a5
-timeCreated: 1500052742
-licenseType: Store
+labels:
+- Lowpoly
+- Stone
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

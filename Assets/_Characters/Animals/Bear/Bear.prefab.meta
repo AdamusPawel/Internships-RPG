@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: cfb71dda370ed0f4a8d49f3290182a43
-timeCreated: 1469176157
-licenseType: Store
+labels:
+- Animal
+- Lowpoly
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

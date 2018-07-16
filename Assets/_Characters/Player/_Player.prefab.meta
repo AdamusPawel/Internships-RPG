@@ -1,5 +1,8 @@
 fileFormatVersion: 2
 guid: d0158b016202c7d4da3e86fab5d0d7a7
+labels:
+- Lowpoly
+- Player
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 100100000

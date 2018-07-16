@@ -1,8 +1,12 @@
 fileFormatVersion: 2
 guid: 8bdbd35067bb1ff4e9904a4c3133991d
-timeCreated: 1507228037
-licenseType: Store
+labels:
+- Building
+- House
+- Lowpoly
+- Stone
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

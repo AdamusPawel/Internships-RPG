@@ -1,8 +1,12 @@
 fileFormatVersion: 2
 guid: 4c2122c626d9a1d4c99d4ae898ccc727
-timeCreated: 1507228014
-licenseType: Store
+labels:
+- Fence
+- Gate
+- Lowpoly
+- Stone
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

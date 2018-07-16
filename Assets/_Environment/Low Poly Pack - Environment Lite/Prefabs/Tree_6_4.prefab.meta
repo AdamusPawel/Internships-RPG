@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: 64e244353f381b34faae5433fd69793f
-timeCreated: 1507228075
-licenseType: Store
+labels:
+- Lowpoly
+- Plant
+- Tree
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

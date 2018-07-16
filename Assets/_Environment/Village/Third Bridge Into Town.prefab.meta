@@ -1,8 +1,9 @@
 fileFormatVersion: 2
 guid: 37280ee6b592d01408f7e3d812862731
-timeCreated: 1493826695
-licenseType: Free
+labels:
+- Bridge
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

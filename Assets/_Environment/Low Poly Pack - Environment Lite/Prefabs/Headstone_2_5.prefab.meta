@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: 8dfd1c3242055c943a88942e00e8c78c
-timeCreated: 1507228034
-licenseType: Store
+labels:
+- Headstone
+- Lowpoly
+- Stone
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

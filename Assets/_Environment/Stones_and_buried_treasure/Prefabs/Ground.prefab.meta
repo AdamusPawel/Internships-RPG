@@ -1,8 +1,10 @@
 fileFormatVersion: 2
 guid: 0ed7946982320464596b995b61ecdf34
-timeCreated: 1500052688
-licenseType: Store
+labels:
+- Lowpoly
+- Terrain
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

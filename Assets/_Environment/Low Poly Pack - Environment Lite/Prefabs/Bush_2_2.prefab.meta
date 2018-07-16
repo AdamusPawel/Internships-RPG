@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: 1bc3d03f7253373488e2282e49338250
-timeCreated: 1507228065
-licenseType: Store
+labels:
+- Bush
+- Lowpoly
+- Plant
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

@@ -1,8 +1,10 @@
 fileFormatVersion: 2
 guid: faaadd2c9c666044a8f7b6d5eac18369
-timeCreated: 1506727756
-licenseType: Free
+labels:
+- Lowpoly
+- Npc
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

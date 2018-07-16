@@ -1,19 +1,20 @@
 fileFormatVersion: 2
 guid: ab5e0beb1c36778479983f28b65d97dd
 labels:
-- wood
-- lowpoly
+- Lowpoly
+- art
 - door
-- fences
 - fence
-- low-poly
+- fences
 - free
+- low-poly
+- lowpoly
 - pack
 - set
-- art
-timeCreated: 1462217374
-licenseType: Store
+- wood
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

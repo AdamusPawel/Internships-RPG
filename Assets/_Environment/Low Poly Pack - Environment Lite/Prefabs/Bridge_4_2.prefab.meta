@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: 99687c5f5b7b7fc47b072294a2888938
-timeCreated: 1507228007
-licenseType: Store
+labels:
+- Bridge
+- Lowpoly
+- Wood
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

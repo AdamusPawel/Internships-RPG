@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: fb1342e2566442642a1b0da9756b066e
-timeCreated: 1500052681
-licenseType: Store
+labels:
+- Bottle
+- Lowpoly
+- Potion
 NativeFormatImporter:
+  externalObjects: {}
   mainObjectFileID: 100100000
   userData: 
   assetBundleName: 

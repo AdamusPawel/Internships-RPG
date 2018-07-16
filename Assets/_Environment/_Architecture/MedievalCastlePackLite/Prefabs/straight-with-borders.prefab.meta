@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: f4b98e34bd7e81e478058e8eeda8042d
+labels:
+- Brick
+- Building
+- Castle
+- Wall
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
