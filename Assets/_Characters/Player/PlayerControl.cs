@@ -18,7 +18,7 @@ namespace RPG.Characters
             abilities = GetComponent<SpecialAbilities>();
             weaponSystem = GetComponent<WeaponSystem>();
             interactable = GetComponent<Interactable>();
-            
+
             RegisterForMouseEvents();
         }
 
@@ -32,7 +32,7 @@ namespace RPG.Characters
 
         void Update()
         {
-             ScanForAbilityKeyDown();
+            ScanForAbilityKeyDown();
         }
 
         void ScanForAbilityKeyDown()
@@ -83,13 +83,13 @@ namespace RPG.Characters
 
         void OnMouseOverInteractable(Interactable interactable)
         {
-            if ((Input.GetMouseButton(1) || Input.GetMouseButtonDown(1)) && IsTargetInRange(interactable.gameObject))
+            if (Input.GetMouseButtonDown(1) && IsTargetInRange(interactable.gameObject))
             {
                 weaponSystem.StopAttacking();
-                // TODO Intearct();
+                // TODOIntearct();
                 interactable.Interact();
             }
-            else if ((Input.GetMouseButton(1) || Input.GetMouseButtonDown(1)) && !IsTargetInRange(interactable.gameObject))
+            else if (Input.GetMouseButtonDown(1) && !IsTargetInRange(interactable.gameObject))
             {
                 weaponSystem.StopAttacking();
                 // TODO MoveAndIntearct();

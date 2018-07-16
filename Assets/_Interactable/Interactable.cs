@@ -32,21 +32,6 @@ namespace RPG.Characters
             }
         }
 
-        public void OnFocused(Transform playerTransform)
-        {
-            isFocus = true;
-            player = playerTransform;
-            hasInteracted = false;
-        }
-
-        public void OnDefcused()
-        {
-            isFocus = false;
-            player = null;
-            hasInteracted = false;
-        }
-
-
         void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;
