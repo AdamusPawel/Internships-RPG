@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: leaves_mushroom_house
   m_Shader: {fileID: 4800000, guid: 0afc4afff48685a40864501bfcaabd5b, type: 3}
