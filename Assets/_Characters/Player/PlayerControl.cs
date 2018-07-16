@@ -10,12 +10,14 @@ namespace RPG.Characters
         Character character;
         SpecialAbilities abilities;
         WeaponSystem weaponSystem;
+        Interactable interactable;
 
         void Start()
         {
             character = GetComponent<Character>();
             abilities = GetComponent<SpecialAbilities>();
             weaponSystem = GetComponent<WeaponSystem>();
+            interactable = GetComponent<Interactable>();
             
             RegisterForMouseEvents();
         }
@@ -81,10 +83,17 @@ namespace RPG.Characters
 
         void OnMouseOverInteractable(Interactable interactable)
         {
-            if (Input.GetMouseButton(1))
+            if ((Input.GetMouseButton(1) || Input.GetMouseButtonDown(1)) && IsTargetInRange(interactable.gameObject))
             {
                 weaponSystem.StopAttacking();
-                Debug.Log("Interacting with " + transform.name);  //TODO it should be called by isFocus
+                // TODO Intearct();
+                interactable.Interact();
+            }
+            else if ((Input.GetMouseButton(1) || Input.GetMouseButtonDown(1)) && !IsTargetInRange(interactable.gameObject))
+            {
+                weaponSystem.StopAttacking();
+                // TODO MoveAndIntearct();
+                StartCoroutine(MoveAndInteract(interactable));
             }
         }
 
@@ -108,6 +117,12 @@ namespace RPG.Characters
         {
             yield return StartCoroutine(MoveToTarget(enemy.gameObject));
             abilities.AttemptSpecialAbility(0, enemy.gameObject);
+        }
+
+        IEnumerator MoveAndInteract(Interactable interactable)
+        {
+            yield return StartCoroutine(MoveToTarget(interactable.gameObject));
+            interactable.Interact();
         }
     }
 }
