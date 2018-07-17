@@ -2,9 +2,8 @@ fileFormatVersion: 2
 guid: 0e0ffe614c6a184429243316c49e2efd
 labels:
 - Bottle
-- Item
-- Object
 - Potion
+- Prop
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

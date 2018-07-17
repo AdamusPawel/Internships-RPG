@@ -1,10 +1,9 @@
 fileFormatVersion: 2
 guid: 5f19be0067756ea45bd6b780e9794b80
 labels:
-- Item
 - Key
 - Lowpoly
-- Object
+- Prop
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 100100000

@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: 7482e26d21c702344ac7795f06772f1c
 labels:
-- Item
-- Object
+- Prop
 - Sack
 NativeFormatImporter:
   externalObjects: {}

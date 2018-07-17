@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: b6e0ba6146fb48e45bbd531f79dca8f1
 labels:
+- Architecture
 - Building
 NativeFormatImporter:
   externalObjects: {}

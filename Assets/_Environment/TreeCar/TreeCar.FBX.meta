@@ -1,9 +1,5 @@
 fileFormatVersion: 2
 guid: ca1b2966d5b5c5e49ad8f8c07a73eebb
-labels:
-- Car
-- Tree
-- Vehicle
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:

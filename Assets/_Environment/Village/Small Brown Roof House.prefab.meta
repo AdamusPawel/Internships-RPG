@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: cc1e685ed7b08ab449bb9fa83303990d
 labels:
+- Architecture
 - Building
 - House
 NativeFormatImporter:

@@ -2,9 +2,8 @@ fileFormatVersion: 2
 guid: f1a60a3cb57e231448f84c617337121c
 labels:
 - Consumable
-- Item
 - Lowpoly
-- Object
+- Prop
 - Valentine
 ModelImporter:
   serializedVersion: 23

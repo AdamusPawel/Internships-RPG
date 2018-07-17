@@ -2,9 +2,8 @@ fileFormatVersion: 2
 guid: 18033ef9e9aac6f4a98d8b42a5121067
 labels:
 - Flower
-- Item
 - Lowpoly
-- Object
+- Prop
 - Valentine
 ModelImporter:
   serializedVersion: 23

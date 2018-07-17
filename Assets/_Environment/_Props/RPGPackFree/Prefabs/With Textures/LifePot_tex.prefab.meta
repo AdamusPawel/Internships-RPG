@@ -3,8 +3,8 @@ guid: 7ecec16ee749fd542a500d45e448ad59
 labels:
 - Bottle
 - Lowpoly
-- Object
 - Potion
+- Prop
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

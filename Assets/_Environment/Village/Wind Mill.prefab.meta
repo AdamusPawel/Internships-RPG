@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: b81e60487ef474d45b59648fe9fd303f
 labels:
+- Architecture
 - Building
 - Mill
 NativeFormatImporter:

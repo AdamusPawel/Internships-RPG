@@ -1,9 +1,8 @@
 fileFormatVersion: 2
 guid: 54c295819cbc940479f443cf807656ea
 labels:
-- Item
 - Lowpoly
-- Object
+- Prop
 - Valuable
 NativeFormatImporter:
   externalObjects: {}

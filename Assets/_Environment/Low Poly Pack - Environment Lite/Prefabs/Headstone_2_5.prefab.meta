@@ -1,8 +1,10 @@
 fileFormatVersion: 2
 guid: 8dfd1c3242055c943a88942e00e8c78c
 labels:
+- Grave
 - Headstone
 - Lowpoly
+- Prop
 - Stone
 NativeFormatImporter:
   externalObjects: {}

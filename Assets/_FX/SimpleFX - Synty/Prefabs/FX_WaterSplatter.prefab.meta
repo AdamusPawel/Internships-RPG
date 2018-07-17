@@ -1,8 +1,10 @@
 fileFormatVersion: 2
 guid: 263867d4955e3644f9a1dfa779ab7d1e
-timeCreated: 1467074396
-licenseType: Store
+labels:
+- Fx
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

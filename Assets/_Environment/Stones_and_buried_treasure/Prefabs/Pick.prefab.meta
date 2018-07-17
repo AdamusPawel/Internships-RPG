@@ -2,6 +2,7 @@ fileFormatVersion: 2
 guid: 6191d242d97347540a6f4263049bdfed
 labels:
 - Lowpoly
+- Prop
 - Tool
 NativeFormatImporter:
   externalObjects: {}

@@ -3,8 +3,8 @@ guid: 040b672c2038c2d47b816ecd2d7e6855
 labels:
 - Fruit
 - Lowpoly
-- Object
 - Plant
+- Prop
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 100100000

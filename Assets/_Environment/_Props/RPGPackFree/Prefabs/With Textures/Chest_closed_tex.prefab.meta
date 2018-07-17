@@ -3,7 +3,7 @@ guid: 1dc3e6c6523e70b41b45d83d27c178b9
 labels:
 - Chest
 - Lowpoly
-- Object
+- Prop
 - Storage
 NativeFormatImporter:
   externalObjects: {}
