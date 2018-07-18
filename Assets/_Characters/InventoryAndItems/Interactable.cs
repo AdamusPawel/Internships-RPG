@@ -6,7 +6,7 @@ namespace RPG.Characters
     {
 
         [SerializeField] public float radius = 3f;
-        public Transform intteractionTransform;
+        public Transform interactionTransform;
 
         bool isFocus = false;
         bool hasInteracted = false;
@@ -23,7 +23,7 @@ namespace RPG.Characters
         {
             if (isFocus && !hasInteracted)
             {
-                float distance = Vector3.Distance(player.position, intteractionTransform.position);
+                float distance = Vector3.Distance(player.position, interactionTransform.position);
                 if (distance <= radius)
                 {
                     Interact();
@@ -34,8 +34,12 @@ namespace RPG.Characters
 
         void OnDrawGizmosSelected()
         {
+            if (interactionTransform == null)
+            {
+                interactionTransform = transform;
+            }
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(intteractionTransform.position, radius);
+            Gizmos.DrawWireSphere(interactionTransform.position, radius);
         }
     }
 }
