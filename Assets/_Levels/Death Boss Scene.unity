@@ -1658,7 +1658,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 199794329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -111.44324, y: 70.14148, z: -102.44104}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1087446929}
@@ -3640,7 +3640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &397224134
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3658,7 +3658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -108, y: 192.4}
+  m_AnchoredPosition: {x: -112.48, y: 188.8}
   m_SizeDelta: {x: 288.4, y: 384.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &397224135
@@ -13192,7 +13192,7 @@ GameObject:
   - component: {fileID: 1315653943}
   - component: {fileID: 1315653942}
   m_Layer: 5
-  m_Name: Title
+  m_Name: InventoryTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14496,8 +14496,9 @@ GameObject:
   - component: {fileID: 1434808815}
   - component: {fileID: 1434808814}
   - component: {fileID: 1434808813}
+  - component: {fileID: 1434808817}
   m_Layer: 5
-  m_Name: Inventory
+  m_Name: InventoryCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14579,6 +14580,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1434808817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1434808812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b526fe7dc8fff3542ac5a333b1c307f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsParent: {fileID: 1294725880}
+  inventoryUI: {fileID: 397224133}
 --- !u!1001 &1447003194
 Prefab:
   m_ObjectHideFlags: 0
@@ -18807,8 +18821,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1863586514}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 113.64831, y: -67.84398, z: 104.4391}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1434808816}

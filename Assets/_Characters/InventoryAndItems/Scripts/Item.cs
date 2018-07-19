@@ -10,6 +10,12 @@ namespace RPG.Characters
         public Sprite icon = null;
         public bool isDefaultItem = false;
 
+        public virtual void Use()
+        {
+            //use the item
+            //something have to happen
 
+            Debug.Log("Item" + name + " got used!");
+        }
     }
 }

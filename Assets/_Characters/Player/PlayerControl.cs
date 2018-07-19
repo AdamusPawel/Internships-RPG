@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
 using RPG.CameraUI; // for mouse events
 
@@ -32,6 +33,10 @@ namespace RPG.Characters
 
         void Update()
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
             ScanForAbilityKeyDown();
         }
 
