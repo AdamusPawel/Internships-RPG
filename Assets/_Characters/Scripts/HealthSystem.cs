@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -17,7 +15,7 @@ namespace RPG.Characters
 
         const string DEATH_TRIGGER = "Death";
 
-        float currentHealthPoints; 
+        float currentHealthPoints;
         Animator animator;
         AudioSource audioSource;
         Character characterMovement;
@@ -42,7 +40,15 @@ namespace RPG.Characters
         {
             if (healthBar) // Enemies may not have health bars to update
             {
-                healthBar.fillAmount = healthAsPercentage;
+                if (currentHealthPoints >= maxHealthPoints && tag != "Player")
+                {
+                    healthBar.enabled = false;
+                }
+                else
+                {
+                    healthBar.enabled = true;
+                    healthBar.fillAmount = healthAsPercentage;
+                }
             }
         }
 
