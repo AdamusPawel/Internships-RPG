@@ -1,5 +1,10 @@
 fileFormatVersion: 2
 guid: c869d248c07099445b26f966a64c3672
+labels:
+- Animated
+- Plant
+- Tree
+- Vegetation
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
