@@ -8,8 +8,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: NTT_PinkSands
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _DETAIL_MULX2 _NORMALMAP _PARALLAXMAP
-  m_LightmapFlags: 5
+  m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _NORMALMAP _PARALLAXMAP
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 46add4f003496074e8039c36a949a73e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 49be9db992787ff48b9440792e82d483, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 20f85e1396378ef4186a9cb8a5a74b30, type: 3}
+        m_Texture: {fileID: 2800000, guid: d1713ee8c8cff874a927217c8bf279fe, type: 3}
         m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -47,11 +47,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: d2d532cface0b964ea232f2e82e1d428, type: 3}
+        m_Texture: {fileID: 2800000, guid: 92e8508cd939a784f92585503df52f67, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: dd19af58e97760c44886677cdda61c84, type: 3}
+        m_Texture: {fileID: 2800000, guid: 933ee0187d514ad4495682cd5b26b938, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -60,11 +60,15 @@ Material:
     - _DetailNormalMapScale: 0.25
     - _DstBlend: 0
     - _EmissionScaleUI: 0
+    - _GlossMapScale: 1
     - _Glossiness: 0.1
+    - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 0.398
     - _Parallax: 0.0142
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
