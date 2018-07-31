@@ -75,17 +75,17 @@ namespace RPG.Characters
             animator.SetTrigger(DEATH_TRIGGER);
 
             audioSource.clip = deathSounds[UnityEngine.Random.Range(0, deathSounds.Length)];
-            audioSource.Play(); // overrind any existing sounds
+            audioSource.Play(); // override any existing sounds
             yield return new WaitForSecondsRealtime(audioSource.clip.length);
 
             var playerComponent = GetComponent<PlayerControl>();
             if (playerComponent && playerComponent.isActiveAndEnabled) // relying on lazy evaluation
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
-            else // assume is enemy fr now, reconsider on other NPCs
+            else // assume is enemy for now, reconsider on other NPCs
             {
-                DestroyObject(gameObject, deathVanishSeconds);
+                Destroy(gameObject, deathVanishSeconds);
             }
         }
     }

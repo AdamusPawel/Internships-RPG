@@ -7,15 +7,14 @@ namespace RPG.CameraUI
         public Transform target;
         public Vector3 offset = new Vector3(0, -1, -1);
 
-        public float pitch = .7f;
+        [SerializeField] float minZoom = 4f;
+        [SerializeField] float maxZoom = 13f;
+        [SerializeField] float zoomSpeed = 800f;
+        [SerializeField] float yawSpeed = 100f;
 
-        public float minZoom = 4f;
-        public float maxZoom = 13f;
-        public float zoomSpeed = 800f;
-        public float yawSpeed = 100f;
-
-        public float currentZoom = 13f;
-        public float currentYaw = 135f;
+        [SerializeField] public float pitch = .7f;
+        [SerializeField] float currentZoom = 13f;
+        [SerializeField] float currentYaw = 135f;
 
         void Update()
         {
@@ -31,8 +30,6 @@ namespace RPG.CameraUI
             transform.LookAt(target.position + Vector3.up * pitch);
 
             transform.RotateAround(target.position, Vector3.up, currentYaw);
-
-            //Debug.Log("Current zoom = " + currentZoom + ", current yaw = " + currentYaw % 360);
         }
     }
 }
