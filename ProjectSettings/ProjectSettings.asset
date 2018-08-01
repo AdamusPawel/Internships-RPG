@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Internships RPG
+  productName: Epic Quest for Nine Carrots
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -113,7 +113,7 @@ PlayerSettings:
   vulkanEnableSetSRGBWrite: 0
   vulkanUseSWCommandBuffers: 0
   m_SupportedAspectRatios:
-    4:3: 0
+    4:3: 1
     5:4: 0
     16:10: 0
     16:9: 1
