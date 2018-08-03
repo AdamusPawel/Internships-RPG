@@ -1,137 +1,163 @@
 ﻿Shader "Custom/Outline"
 {
-	Properties // variables
+	Properties//Variables
 	{
-		_MainTex("Main Texture (RGB)", 2D) = "white" {} // allows for a texture property
-		_Color("Color", Color) = (1,1,1,1) // allows for a color property
+		_MainTex("Main Texture (RBG)", 2D) = "white" {}//Allows for a texture property.
+	_Color("Color", Color) = (1,1,1,1)//Allows for a color property.
 
 		_OutlineTex("Outline Texture", 2D) = "white" {}
-		_OutlineColor("Outline Color", Color) = (1,1,1,1)
-		_OutlineWidth("Outline Width", Range(1.0, 10.0)) = 1.1
+	_OutlineColor("Outline Color", Color) = (1,1,1,1)
+		_OutlineWidth("Outline Width", Range(1.0,10.0)) = 1.1
 	}
 
-	SubShader
+		SubShader
 	{
 		Tags
-		{
-			"Queue" = "Transparent"
-		}
-		
+	{
+		"Queue" = "Transparent"
+	}
 		Pass
-		{
-			Name "OUTLINE"
+	{
+		Name "OUTLINE"
 
-			ZWrite Off
+		ZWrite Off//Allows for other render passes to be drawn on top of this pass.
 
-			CGPROGRAM // allows talk between two languages: ShaderLab and nVidia C for graphics
+		CGPROGRAM//Allows talk between two languages: shader lab and nvidia C for graphics.
 
-			/* FUNCTION DEFINES - names for the vertes and fragment functions */
+				 //\===========================================================================================
+				 //\ Function Defines - defines the name for the vertex and fragment functions
+				 //\===========================================================================================
 
-			#pragma vertex vert // define for the building function
-			#pragma fragment frag // define for colouring function
+#pragma vertex vert//Define for the building function.
 
-			/* INCLUDES */
+#pragma fragment frag//Define for coloring function.
 
-			#include "UnityCG.cginc" // library of built in shader functions
+				 //\===========================================================================================
+				 //\ Includes
+				 //\===========================================================================================
 
-			/* STRUCTURES - can get data like: vertices, normal, colorm uv etc. */
+#include "UnityCG.cginc"//Built in shader functions.
 
-			struct appdata
-			{
-				float4 vertex : POSITION;
-				float2 uv: TEXCOORD0;
-			};
+				 //\===========================================================================================
+				 //\ Structures - Can get data like - vertices's, normal, color, uv.
+				 //\===========================================================================================
 
-			struct v2f
-			{
-				float4 pos : SV_POSITION;
-				float2 uv: TEXCOORD0;
-			};
+		struct appdata//How the vertex function receives info.
+	{
+		float4 vertex : POSITION;
+		float2 uv : TEXCOORD0;
+	};
 
-			/* IMPORTS - reimport property from ShaderLab to nVidia CG  */
+	struct v2f
+	{
+		float4 pos : SV_POSITION;
+		float2 uv : TEXCOORD0;
+	};
 
-			float _OutlineWidth;
-			float4 _OutlineColor;
-			sampler2D _OutlineTex;
+	//\===========================================================================================
+	//\ Imports - Re-import property from shader lab to nvidia cg
+	//\===========================================================================================
 
-			/* VERTEX FUNCTIONS - builds the objects */
+	float _OutlineWidth;
+	float4 _OutlineColor;
+	sampler2D _OutlineTex;
 
-			v2f vert(appdata IN)
-			{
-				IN.vertex.xyz *= _OutlineWidth;
-				v2f OUT;
+	//\===========================================================================================
+	//\ Vertex Function - Builds the object
+	//\===========================================================================================
 
-				OUT.pos = UnityObjectToClipPos(IN.vertex);
-				OUT.uv = IN.uv;
+	v2f vert(appdata IN)
+	{
+		IN.vertex.xyz *= _OutlineWidth;
+		v2f OUT;
 
-				return OUT;
-			}
+		OUT.pos = UnityObjectToClipPos(IN.vertex);
+		OUT.uv = IN.uv;
 
-			/* FRAGMENT FUNCTION - color it in*/
+		return OUT;
+	}
 
-			fixed4 frag(v2f IN) : SV_Target
-			{
-				float4 texColor = tex2D(_OutlineTex, IN.uv);
-				return texColor * _OutlineColor;
-			}
+	//\===========================================================================================
+	//\ Fragment Function - Color it in
+	//\===========================================================================================
+
+	fixed4 frag(v2f IN) : SV_Target
+	{
+		float4 texColor = tex2D(_OutlineTex, IN.uv);
+		return texColor * _OutlineColor;
+	}
 
 		ENDCG
 	}
 
 		Pass
-		{
-			Name "OBJECT"
-			CGPROGRAM // allows talk between two languages: ShaderLab and nVidia C for graphics
+	{
+		Name "OBJECT"
 
-		    /* FUNCTION DEFINES - names for the vertes and fragment functions */
+		CGPROGRAM//Allows talk between two languages: shader lab and nvidia C for graphics.
 
-			#pragma vertex vert // define for the building function
-			#pragma fragment frag // define for colouring function
+				 //\===========================================================================================
+				 //\ Function Defines - defines the name for the vertex and fragment functions
+				 //\===========================================================================================
 
-			/* INCLUDES */
+#pragma vertex vert//Define for the building function.
 
-			#include "UnityCG.cginc" // library of built in shader functions
+#pragma fragment frag//Define for coloring function.
 
-			/* STRUCTURES - can get data like: vertices, normal, colorm uv etc. */
+				 //\===========================================================================================
+				 //\ Includes
+				 //\===========================================================================================
 
-			struct appdata
-			{
-				float4 vertex : POSITION;
-				float2 uv: TEXCOORD0;
-			};
+#include "UnityCG.cginc"//Built in shader functions.
 
-			struct v2f
-			{
-				float4 pos : SV_POSITION;
-				float2 uv: TEXCOORD0;
-			};
+				 //\===========================================================================================
+				 //\ Structures - Can get data like - vertices's, normal, color, uv.
+				 //\===========================================================================================
 
-			/* IMPORTS - reimport property from ShaderLab to nVidia CG  */
+		struct appdata//How the vertex function receives info.
+	{
+		float4 vertex : POSITION;
+		float2 uv : TEXCOORD0;
+	};
 
-			float4 _Color;
-			sampler2D _MainTex;
+	struct v2f
+	{
+		float4 pos : SV_POSITION;
+		float2 uv : TEXCOORD0;
+	};
 
-			/* VERTEX FUNCTIONS - builds the objects */
+	//\===========================================================================================
+	//\ Imports - Re-import property from shader lab to nvidia cg
+	//\===========================================================================================
 
-			v2f vert(appdata IN)
-			{
-				v2f OUT;
+	float4 _Color;
+	sampler2D _MainTex;
 
-				OUT.pos = UnityObjectToClipPos(IN.vertex);
-				OUT.uv = IN.uv;
+	//\===========================================================================================
+	//\ Vertex Function - Builds the object
+	//\===========================================================================================
 
-				return OUT;
-			}
+	v2f vert(appdata IN)
+	{
+		v2f OUT;
 
-			/* FRAGMENT FUNCTION - color it in*/
+		OUT.pos = UnityObjectToClipPos(IN.vertex);
+		OUT.uv = IN.uv;
 
-			fixed4 frag(v2f IN) : SV_Target
-			{
-				float4 texColor = tex2D(_MainTex, IN.uv);
-				return texColor * _Color;
-			}
+		return OUT;
+	}
+
+	//\===========================================================================================
+	//\ Fragment Function - Color it in
+	//\===========================================================================================
+
+	fixed4 frag(v2f IN) : SV_Target
+	{
+		float4 texColor = tex2D(_MainTex, IN.uv);
+		return texColor * _Color;
+	}
 
 		ENDCG
-		}
+	}
 	}
 }
