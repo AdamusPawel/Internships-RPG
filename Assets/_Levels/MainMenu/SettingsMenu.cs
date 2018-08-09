@@ -7,6 +7,7 @@ public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public Dropdown resolutionDropdown;
+    public Toggle fulscreenToggle;
     Resolution[] resolutions;
 
     void Start()
@@ -34,6 +35,8 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        fulscreenToggle.isOn = Screen.fullScreen;
     }
 
     public void SetResolution(int resolutionIndex)
@@ -41,10 +44,11 @@ public class SettingsMenu : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen, resolution.refreshRate);
     }
+
     public void SetFullscreen()
     {
-        //Debug.Log("Fullscreen set to: " + isFullscreen);
         Screen.fullScreen = !Screen.fullScreen;
+        Debug.Log("Fullscreen set to: " + Screen.fullScreen);
     }
 
     public void SetMasterVolume(float volume)
@@ -61,6 +65,4 @@ public class SettingsMenu : MonoBehaviour
     {
         audioMixer.SetFloat("SfxVolume", volume);
     }
-
-
 }
