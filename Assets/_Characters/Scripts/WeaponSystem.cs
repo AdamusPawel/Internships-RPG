@@ -79,6 +79,10 @@ namespace RPG.Characters
             animator.StopPlayback();
             StopAllCoroutines();
         }
+        private void StopMoving()
+        {
+            character.SetDestination(character.transform.position);
+        }
 
         IEnumerator AttackTargetRepeatedly()
         {
@@ -105,12 +109,15 @@ namespace RPG.Characters
 
         void AttackTargetOnce()
         {
+            StopMoving();
+
             transform.LookAt(target.transform);
             animator.SetTrigger(ATTACK_TRIGGER);
             float damageDelay = currentWeaponConfig.GetDamageDelay();
             SetAttackAnimation();
             StartCoroutine(DamageAfterDelay(damageDelay));
         }
+
 
         IEnumerator DamageAfterDelay(float delay)
         {

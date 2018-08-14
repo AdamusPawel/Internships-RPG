@@ -2780,7 +2780,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1083351766544182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -141.06506, y: 12.649918, z: -101.83667}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4782618932690172}
@@ -6340,10 +6340,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7d493ef7d1af04307941d084945693a9, type: 2}
   - {fileID: 11400000, guid: 87b1244f6029d4a0f850297a5dfedd7a, type: 2}
   - {fileID: 11400000, guid: 8f838734eb7a749009a3315fd6312191, type: 2}
-  energyBar: {fileID: 0}
   maxEnergyPoints: 100
   regenPointsPerSecond: 5
   outOfEnergy: {fileID: 8300000, guid: 8136ff2516a8e4083a19bfd8fad67741, type: 3}
+  energyBar: {fileID: 0}
 --- !u!114 &114455088859074484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6408,7 +6408,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthPoints: 200
-  healthBar: {fileID: 0}
   damageSounds:
   - {fileID: 8300000, guid: 8b8b2a645d1a46045962a8ef4bf3c6dd, type: 3}
   - {fileID: 8300000, guid: 3cf37403e57214c41a097f655c940bcf, type: 3}
@@ -6418,6 +6417,7 @@ MonoBehaviour:
   deathSounds:
   - {fileID: 8300000, guid: 0923ac4e38c741d48aabaf0534a26cf6, type: 3}
   deathVanishSeconds: 2
+  healthBar: {fileID: 0}
 --- !u!137 &137099950173435522
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
