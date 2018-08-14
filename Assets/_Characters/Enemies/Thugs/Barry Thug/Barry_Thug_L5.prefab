@@ -2392,7 +2392,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b6c41755406a4ec48a0ab2e2c29d1b20, type: 3}
   - {fileID: 8300000, guid: d1d600442a5b8f2418fa04d27bda6565, type: 3}
   deathSounds:
-  - {fileID: 8300000, guid: ea228368169c26340a657c2042bf1115, type: 3}
+  - {fileID: 8300000, guid: d2281ffed63dddb43a08a86ba0779112, type: 3}
+  - {fileID: 8300000, guid: a07deb56d07075b408c7bc5227863062, type: 3}
+  - {fileID: 8300000, guid: 22abbe2a8245f844fbe8ec40f684a32b, type: 3}
+  - {fileID: 8300000, guid: 20ec4e81eb3fcb74799149848b3d0470, type: 3}
+  - {fileID: 8300000, guid: 1bb13271ca2c16e44b5c68cd6d212d53, type: 3}
   deathVanishSeconds: 2
 --- !u!114 &114568838169630708
 MonoBehaviour:
