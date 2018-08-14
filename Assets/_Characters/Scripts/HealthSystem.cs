@@ -8,10 +8,11 @@ namespace RPG.Characters
     public class HealthSystem : MonoBehaviour
     {
         [SerializeField] float maxHealthPoints = 100f;
-        [SerializeField] Image healthBar;
         [SerializeField] AudioClip[] damageSounds;
         [SerializeField] AudioClip[] deathSounds;
         [SerializeField] float deathVanishSeconds = 2.0f;
+
+        public Image healthBar;
 
         const string DEATH_TRIGGER = "Death";
 

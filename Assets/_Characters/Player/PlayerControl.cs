@@ -2,7 +2,10 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
-using RPG.CameraUI; // for mouse events
+using RPG.CameraUI;
+using UnityEngine.UI;
+
+// for mouse events
 
 namespace RPG.Characters
 {
@@ -20,7 +23,21 @@ namespace RPG.Characters
             weaponSystem = GetComponent<WeaponSystem>();
             interactable = GetComponent<Interactable>();
 
+            BindHealthAndManaBarsImagesFromHUD();
             RegisterForMouseEvents();
+        }
+
+        private void BindHealthAndManaBarsImagesFromHUD()
+        {
+            if (GameObject.Find("Core Game Elements"))
+            {
+                GetComponent<HealthSystem>().healthBar = GameObject.FindGameObjectWithTag("PlayerHealthBar").GetComponent<Image>();
+                abilities.energyBar = GameObject.FindGameObjectWithTag("PlayerSpecialBar").GetComponent<Image>();
+            }
+            else
+            {
+                Debug.LogWarning("There is a player in the scene but no Core Game Elements exist");
+            }
         }
 
         private void RegisterForMouseEvents()

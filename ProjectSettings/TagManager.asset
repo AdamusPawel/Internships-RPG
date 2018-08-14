@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Collide
+  - PlayerHealthBar
+  - PlayerSpecialBar
   layers:
   - Default
   - TransparentFX

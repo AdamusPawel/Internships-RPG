@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using RPG.Characters;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace RPG.CameraUI
 {
@@ -15,6 +17,23 @@ namespace RPG.CameraUI
         [SerializeField] public float pitch = .7f;
         [SerializeField] float currentZoom = 13f;
         [SerializeField] float currentYaw = 135f;
+
+        void Start()
+        {
+            SetTargetForCameraToFollow();
+        }
+
+        private void SetTargetForCameraToFollow()
+        {
+            if (GameObject.FindGameObjectWithTag("Player"))
+            {
+                target = GameObject.FindGameObjectWithTag("Player").transform;
+            }
+            else
+            {
+                Debug.LogError("There is no player in the scene for main camera to follow");
+            }
+        }
 
         void Update()
         {
