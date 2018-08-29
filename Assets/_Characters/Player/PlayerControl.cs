@@ -2,6 +2,7 @@
 using UnityEngine.EventSystems;
 using System.Collections;
 using RPG.CameraUI;
+using UnityEditor;
 using UnityEngine.UI;
 
 // for mouse events
@@ -48,7 +49,56 @@ namespace RPG.Characters
             {
                 return;
             }
+
             ScanForAbilityKeyDown();
+
+
+            if (Input.GetKeyDown(KeyCode.KeypadPlus))
+            {
+                GetComponent<Character>().moveSpeedMultiplier += 0.5f;
+                Debug.Log("Player speed set to " + GetComponent<Character>().moveSpeedMultiplier);
+            }
+
+            if (Input.GetKeyDown(KeyCode.KeypadMinus))
+            {
+                GetComponent<Character>().moveSpeedMultiplier -= 0.5f;
+                Debug.Log("Player speed set to " + GetComponent<Character>().moveSpeedMultiplier);
+            }
+
+            GetComponent<Character>().moveSpeedMultiplier = Mathf.Clamp(GetComponent<Character>().moveSpeedMultiplier, 0f, 10f);
+
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Time.timeScale += 0.1f;
+                Debug.Log("Time scale set to " + Time.timeScale);
+            }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Time.timeScale -= 0.1f;
+                Debug.Log("Time scale set to " + Time.timeScale);
+            }
+
+            GetComponent<Character>().moveSpeedMultiplier = Mathf.Clamp(GetComponent<Character>().moveSpeedMultiplier, 0f, 2f);
+
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                character.godMode = !character.godMode;
+                Debug.Log("GodMode set to " + character.godMode);
+            }
+
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                character.unlimitedMana = !character.unlimitedMana;
+                Debug.Log("Unlimited mana set to " + character.unlimitedMana);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Keypad0))
+            {
+                GetComponent<Character>().moveSpeedMultiplier = 1f;
+                Time.timeScale = 1f;
+                Debug.Log("Reset");
+            }
         }
 
         void ScanForAbilityKeyDown()
