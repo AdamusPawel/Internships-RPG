@@ -287,7 +287,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4877563590081108, guid: dbb122683827e844f859a4c0bfd49dc8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 24.995422
+      value: 23.51
       objectReference: {fileID: 0}
     - target: {fileID: 4877563590081108, guid: dbb122683827e844f859a4c0bfd49dc8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -676,6 +676,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114903967033880332, guid: f5f40699c4788d94aa4d7c3b3e60dcc5,
+        type: 2}
+      propertyPath: currentYaw
+      value: 320
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5f40699c4788d94aa4d7c3b3e60dcc5, type: 2}
