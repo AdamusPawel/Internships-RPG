@@ -4,10 +4,15 @@ using UnityEngine.UI;
 
 namespace RPG.CameraUI
 {
-    public class CameraFollow : MonoBehaviour
+    public class CameraFollow : MonoBehaviour //TODO: fix angle memory
     {
-        public Transform target;
-        public Vector3 offset = new Vector3(0, -1, -1);
+        [Header("Camera level parameters")]
+        [SerializeField] float currentYaw = 135f;
+
+        [Header("Global Parameters")]
+        [SerializeField] Transform target;
+
+        [SerializeField] Vector3 offset = new Vector3(0, -1, -1);
 
         [SerializeField] float minZoom = 4f;
         [SerializeField] float maxZoom = 13f;
@@ -16,11 +21,13 @@ namespace RPG.CameraUI
 
         [SerializeField] public float pitch = .7f;
         [SerializeField] float currentZoom = 13f;
-        [SerializeField] float currentYaw = 135f;
+
+        private float currentYawMemory;
 
         void Start()
         {
             SetTargetForCameraToFollow();
+            currentYawMemory = currentYaw;
         }
 
         private void SetTargetForCameraToFollow()
@@ -41,6 +48,9 @@ namespace RPG.CameraUI
             currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
 
             currentYaw += Input.GetAxis("Horizontal") * yawSpeed * Time.deltaTime;
+
+            if (Input.GetKeyDown(KeyCode.Keypad0))
+                currentYaw = currentYawMemory;
         }
 
         void LateUpdate()
