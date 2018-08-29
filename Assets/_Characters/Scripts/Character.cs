@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
-using RPG.CameraUI;
 using UnityEditor;
-using UnityEngine.UI;
 
 namespace RPG.Characters
 {
@@ -28,7 +26,7 @@ namespace RPG.Characters
         [SerializeField] float colliderHeight = 2.03f;
 
         [Header("Movement")]
-        [SerializeField] float moveSpeedMultiplier = .7f;
+        public float moveSpeedMultiplier = .7f;
         [SerializeField] float animationSpeedMultiplier = 1.5f;
         [SerializeField] float movingTurnSpeed = 360;
         [SerializeField] float stationaryTurnSpeed = 180;
