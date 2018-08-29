@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace RPG.Characters
@@ -15,6 +14,7 @@ namespace RPG.Characters
 
         float currentEnergyPoints;
         AudioSource audioSource;
+        Character character;
 
         float energyAsPercent { get { return currentEnergyPoints / maxEnergyPoints; } }
 
@@ -22,9 +22,10 @@ namespace RPG.Characters
         void Start()
         {
             audioSource = GetComponent<AudioSource>();
+            character = GetComponent<Character>();
 
-            currentEnergyPoints = maxEnergyPoints;
             AttachInitialAbilities();
+            currentEnergyPoints = maxEnergyPoints;
             UpdateEnergyBar();
         }
 
@@ -33,8 +34,8 @@ namespace RPG.Characters
             if (currentEnergyPoints < maxEnergyPoints)
             {
                 AddEnergyPoints();
-                UpdateEnergyBar();
             }
+            UpdateEnergyBar();
         }
 
         void AttachInitialAbilities()
@@ -48,11 +49,14 @@ namespace RPG.Characters
         public void AttemptSpecialAbility(int abilityIndex, GameObject target = null)
         {
             var energyComponent = GetComponent<SpecialAbilities>();
+
             var energyCost = abilities[abilityIndex].GetEnergyCost();
 
             if (energyCost <= currentEnergyPoints)
             {
-                ConsumeEnergy(energyCost);
+                if (character.unlimitedMana == false)
+                    ConsumeEnergy(energyCost);
+
                 abilities[abilityIndex].Use(target);
             }
             else

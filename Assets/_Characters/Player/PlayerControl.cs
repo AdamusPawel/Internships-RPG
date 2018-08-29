@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
 using RPG.CameraUI;
@@ -23,21 +22,16 @@ namespace RPG.Characters
             weaponSystem = GetComponent<WeaponSystem>();
             interactable = GetComponent<Interactable>();
 
-            BindHealthAndManaBarsImagesFromHUD();
+            BindManaBarToPlayerHud();
             RegisterForMouseEvents();
         }
 
-        private void BindHealthAndManaBarsImagesFromHUD()
+        private void BindManaBarToPlayerHud()
         {
             if (GameObject.Find("Core Game Elements"))
-            {
-                GetComponent<HealthSystem>().healthBar = GameObject.FindGameObjectWithTag("PlayerHealthBar").GetComponent<Image>();
                 abilities.energyBar = GameObject.FindGameObjectWithTag("PlayerSpecialBar").GetComponent<Image>();
-            }
             else
-            {
-                Debug.LogWarning("There is a player in the scene but no Core Game Elements exist");
-            }
+                Debug.LogWarning("There is a player in the scene but no Core Game Elements with mana bar exist");
         }
 
         private void RegisterForMouseEvents()
@@ -108,7 +102,7 @@ namespace RPG.Characters
             if (Input.GetMouseButtonDown(1) && IsTargetInRange(interactable.gameObject))
             {
                 weaponSystem.StopAttacking();
-                // TODOIntearct();
+                // TODO Intearct();
                 interactable.Interact();
             }
             else if (Input.GetMouseButtonDown(1) && !IsTargetInRange(interactable.gameObject))

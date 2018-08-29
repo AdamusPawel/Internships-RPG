@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36e75182c88b14ee7bf56210b44f90a3, type: 3}
+  m_Name: 1H_Dagger_01
+  m_EditorClassIdentifier: 
+  gripTransform: {fileID: 4705688508082722, guid: 2eedafa4334f2744e8bd0344d44213b3,
+    type: 2}
+  weaponPrefab: {fileID: 182920, guid: 35eb5f7f35ca8e54889c663db5ee4520, type: 2}
+  attackAnimations:
+  - {fileID: 7400000, guid: 668fdc4f7012b7943a1e3a891aedc143, type: 3}
+  - {fileID: 7400000, guid: 32dbe676b3c566c4a9836c244bb478dd, type: 3}
+  - {fileID: 7400000, guid: 39b380f7b0a826d4bab9948086dd1ff1, type: 3}
+  timeBetweenAnimationCycles: 0.5
+  maxAttackRange: 2
+  minDamage: 2
+  maxDamage: 6
+  damageDelay: 0.5
+  attackSpeed: 1.5

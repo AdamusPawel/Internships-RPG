@@ -1,17 +1,23 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 using RPG.CameraUI;
+using UnityEditor;
+using UnityEngine.UI;
 
 namespace RPG.Characters
 {
     [SelectionBase]
     public class Character : MonoBehaviour
     {
-        [Header("Animator")] [SerializeField] RuntimeAnimatorController animatorController;
+        [Header("Cheats")]
+        public bool godMode = false;
+        public bool unlimitedMana = false;
+
+        [Header("Animator")]
+        [SerializeField] RuntimeAnimatorController animatorController;
         [SerializeField] AnimatorOverrideController animatorOverrideController;
         [SerializeField] Avatar characterAvatar;
-        [SerializeField] [Range (.1f, 1f)] float animatorForwardCap = 1f;
+        [SerializeField] [Range(.1f, 1f)] float animatorForwardCap = 1f;
 
         [Header("Audio")]
         [SerializeField] float audioSourceSpatialBlend = 0.5f;
@@ -68,7 +74,7 @@ namespace RPG.Characters
             navMeshAgent.updateRotation = false;
             navMeshAgent.updatePosition = true;
         }
-
+        
         void Update()
         {
             if (!navMeshAgent.isOnNavMesh)
@@ -150,6 +156,20 @@ namespace RPG.Characters
                 // we preserve the existing y part of the current velocity.
                 velocity.y = ridigBody.velocity.y;
                 ridigBody.velocity = velocity;
+            }
+        }
+
+        void OnDrawGizmos()
+        {
+            if (!Application.isPlaying) return;
+
+            // Draw movement line
+            if (tag == "Player")
+            {
+                Handles.color = Color.black;
+                Handles.DrawLine(transform.position, navMeshAgent.destination);
+                Handles.DrawSolidDisc(navMeshAgent.destination, new Vector3(0, 1, 0), 0.1f);
+                Handles.DrawWireDisc(navMeshAgent.destination, new Vector3(0, 1, 0), navMeshAgent.stoppingDistance);
             }
         }
     }

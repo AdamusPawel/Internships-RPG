@@ -93,9 +93,15 @@ namespace RPG.Characters
             while (attackerStillAlive && targetStillAlive)
             {
                 var animationClip = currentWeaponConfig.GetAttackAnimClip();
-                float animationClipTime = animationClip.length / character.GetAnimSpeedMultiplier();
-                float timeToWait = animationClipTime + currentWeaponConfig.GetTimeBetweenAnimationCycles();
 
+                //TODO: calculate attack speed based on second / weapon speed
+                float animationClipTime = animationClip.length/* / currentWeaponConfig.GetAttackSpeed()*/; 
+                float timeToWait = animationClipTime + currentWeaponConfig.GetTimeBetweenAnimationCycles() + Random.Range(0.5f, 1.5f);
+
+                if (tag == "Player")
+                    //TODO: need better idea for smooth transition, mouse buffer maybe?
+                    timeToWait = animationClipTime - 0.1f; // for smooth transition between constant attacks
+                
                 bool isTimeToHitAgain = Time.time - lastHitTime > timeToWait;
 
                 if (isTimeToHitAgain)
@@ -103,6 +109,9 @@ namespace RPG.Characters
                     AttackTargetOnce();
                     lastHitTime = Time.time;
                 }
+
+                if (tag == "Player") yield break;
+
                 yield return new WaitForSeconds(timeToWait);
             }
         }
@@ -113,9 +122,11 @@ namespace RPG.Characters
 
             transform.LookAt(target.transform);
             animator.SetTrigger(ATTACK_TRIGGER);
+
+
             float damageDelay = currentWeaponConfig.GetDamageDelay();
             SetAttackAnimation();
-            StartCoroutine(DamageAfterDelay(damageDelay));
+            StartCoroutine(DamageAfterDelay(0.2f)); //TODO: use attack animation event Hit instead
         }
 
 
@@ -156,7 +167,19 @@ namespace RPG.Characters
 
         float CalculateDamage()
         {
-            return baseDamage + currentWeaponConfig.GetAdditionalDamage();
+            return Random.Range((int)currentWeaponConfig.GetMinDamage(), (int)currentWeaponConfig.GetMaxDamage());
+        }
+
+        // animation events handler
+        public void Hit(AnimationEvent animationEvent)
+        {
+            float eventOccurenceTime = animationEvent.time;
+            // how to use attack animation event "Hit" to calculate delay of dealing damage to HP?
+        }
+
+        public static void Shoot(AnimationEvent animationEvent)
+        {
+            float eventOccurenceTime = animationEvent.time;
         }
     }
 }
