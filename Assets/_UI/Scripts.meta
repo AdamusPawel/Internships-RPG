@@ -1,11 +1,6 @@
 fileFormatVersion: 2
-guid: 99febf982fa74a64bab86713a2d3b1eb
-labels:
-- Animated
-- House
-- Island
-- Plant
-- Tree
+guid: b29a875ca0d794541a5dcb4f5eec7296
+folderAsset: yes
 DefaultImporter:
   externalObjects: {}
   userData: 
