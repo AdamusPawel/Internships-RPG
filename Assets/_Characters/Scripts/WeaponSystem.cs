@@ -122,11 +122,8 @@ namespace RPG.Characters
 
             transform.LookAt(target.transform);
             animator.SetTrigger(ATTACK_TRIGGER);
-
-
-            float damageDelay = currentWeaponConfig.GetDamageDelay();
+            
             SetAttackAnimation();
-            StartCoroutine(DamageAfterDelay(0.2f)); //TODO: use attack animation event Hit instead
         }
 
 
@@ -170,16 +167,17 @@ namespace RPG.Characters
             return Random.Range((int)currentWeaponConfig.GetMinDamage(), (int)currentWeaponConfig.GetMaxDamage());
         }
 
-        // animation events handler
-        public void Hit(AnimationEvent animationEvent)
+        // animation events handlers
+        public void Hit()
         {
-            float eventOccurenceTime = animationEvent.time;
-            // how to use attack animation event "Hit" to calculate delay of dealing damage to HP?
+            Debug.Log(target + " gets hit");
+            target.GetComponent<HealthSystem>().TakeDamage(CalculateDamage());
         }
 
-        public static void Shoot(AnimationEvent animationEvent)
+        public void Shoot()
         {
-            float eventOccurenceTime = animationEvent.time;
+            Debug.Log(target + " gets hit");
+            target.GetComponent<HealthSystem>().TakeDamage(CalculateDamage());
         }
     }
 }
