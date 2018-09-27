@@ -52,7 +52,7 @@ namespace RPG.Characters
 
             ScanForAbilityKeyDown();
 
-
+            #region debug keys
             if (Input.GetKeyDown(KeyCode.KeypadPlus))
             {
                 GetComponent<Character>().moveSpeedMultiplier += 0.5f;
@@ -99,6 +99,8 @@ namespace RPG.Characters
                 Time.timeScale = 1f;
                 Debug.Log("Reset");
             }
+
+            #endregion
         }
 
         void ScanForAbilityKeyDown()

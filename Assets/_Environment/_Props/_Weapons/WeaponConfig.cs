@@ -38,7 +38,6 @@ namespace RPG.Characters
 
         public AnimationClip GetAttackAnimClip()
         {
-            //RemoveAnimationEvents();
             return attackAnimations[UnityEngine.Random.Range(0, attackAnimations.Length)];
         }
 
@@ -56,14 +55,5 @@ namespace RPG.Characters
         {
             return maxDamage;
         }
-
-        ////So that asset packs cannot cause crashes
-        //private void RemoveAnimationEvents()
-        //{
-        //    foreach (var item in attackAnimations)
-        //    {
-        //        item.events = new AnimationEvent[0];
-        //    }
-        //}
     }
 }

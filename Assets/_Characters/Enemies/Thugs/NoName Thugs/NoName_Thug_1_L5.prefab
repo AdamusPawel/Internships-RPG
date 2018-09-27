@@ -1319,15 +1319,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1475437577409542}
-  m_LocalRotation: {x: -0, y: -0.39958313, z: -0, w: -0.9166969}
-  m_LocalPosition: {x: 85.61456, y: -8.169, z: -239.71896}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224589947501125394}
   - {fileID: 4592947094653580}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 55.169003, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4393763128126688
 Transform:
   m_ObjectHideFlags: 1
@@ -2405,7 +2405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53fb437e61ff0493b8734b859139a188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 50
+  maxHealthPoints: 10
   damageSounds:
   - {fileID: 8300000, guid: 58f6e0433963f4d4eae7658d1700744a, type: 3}
   - {fileID: 8300000, guid: 0a6d3ebe55077d145bdf19b575ab7641, type: 3}
@@ -2416,6 +2416,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 645441bdf04003d49897d08a07002e3f, type: 3}
   deathVanishSeconds: 2
   healthBar: {fileID: 0}
+  healthBarOptional: {fileID: 0}
 --- !u!114 &114592905491059144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2445,7 +2446,6 @@ MonoBehaviour:
   moveThreshold: 1
   navMeshAgentSteeringSpeed: 1
   navMeshAgentStoppingDistance: 13
-  characterCanvas: {fileID: 0}
 --- !u!114 &114836890444939338
 MonoBehaviour:
   m_ObjectHideFlags: 1

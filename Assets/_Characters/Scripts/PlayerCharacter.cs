@@ -26,5 +26,10 @@ public class PlayerCharacter : Character
             Handles.DrawLine(transform.position, navMeshAgent.destination);
             Handles.DrawSolidDisc(navMeshAgent.destination, new Vector3(0, 1, 0), 0.1f);
             Handles.DrawWireDisc(navMeshAgent.destination, new Vector3(0, 1, 0), navMeshAgent.stoppingDistance);
+
+        // AOE radius radius
+            Handles.color = Color.red;
+            Handles.DrawWireDisc(transform.position, new Vector3(0, 1, 0), 2.5f);
+
     }
 }

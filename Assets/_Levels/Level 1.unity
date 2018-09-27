@@ -945,6 +945,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114323108300252462, guid: d0158b016202c7d4da3e86fab5d0d7a7,
+        type: 2}
+      propertyPath: abilities.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ca914442b46540d1b48580b2599b2e4,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0158b016202c7d4da3e86fab5d0d7a7, type: 2}
   m_IsPrefabAsset: 0
@@ -35902,6 +35908,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114068517584525354, guid: f2bf892d9eeb9b644af7a7f4b8668d84,
+        type: 2}
+      propertyPath: maxHealthPoints
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114687330236564504, guid: f2bf892d9eeb9b644af7a7f4b8668d84,
+        type: 2}
+      propertyPath: currentWeaponConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: a1b0de1b5bff0794ead20f7689235266,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2bf892d9eeb9b644af7a7f4b8668d84, type: 2}
   m_IsPrefabAsset: 0
@@ -50619,6 +50636,7 @@ GameObject:
   - component: {fileID: 1920112722}
   - component: {fileID: 1920112724}
   - component: {fileID: 1920112723}
+  - component: {fileID: 1920112725}
   m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
@@ -50681,6 +50699,20 @@ Terrain:
   m_PreserveTreePrototypeLayers: 0
   m_ScaleInLightmap: 0.0512
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!114 &1920112725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1920112721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d35db770ececb448917ef0ae2f13f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OneHandedMeleeWeaponsList: []
+  TwoHandedMeleeWeaponsList: []
+  RangedWeaponsList: []
 --- !u!4 &1924206373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 70eea3c701d6c354f9c7658406af7b32,

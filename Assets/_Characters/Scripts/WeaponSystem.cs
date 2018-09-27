@@ -181,5 +181,10 @@ namespace RPG.Characters
             target.GetComponent<HealthSystem>().TakeDamage(dmg);
             Debug.Log(target + " gets hit for " + dmg + " dmg");
         }
+
+        public void PowerAttackHit()
+        {
+            
+        }
     }
 }
