@@ -36,7 +36,7 @@ namespace RPG.Characters
         [SerializeField] float navMeshAgentSteeringSpeed = 1.0f;
         [SerializeField] float navMeshAgentStoppingDistance = 1.3f;
 
-        NavMeshAgent navMeshAgent;
+        protected NavMeshAgent navMeshAgent;
         Animator animator;
         Rigidbody ridigBody;
         float turnAmount;
@@ -154,20 +154,6 @@ namespace RPG.Characters
                 // we preserve the existing y part of the current velocity.
                 velocity.y = ridigBody.velocity.y;
                 ridigBody.velocity = velocity;
-            }
-        }
-
-        void OnDrawGizmos()
-        {
-            if (!Application.isPlaying) return;
-
-            // Draw movement line
-            if (tag == "Player")
-            {
-                Handles.color = Color.black;
-                Handles.DrawLine(transform.position, navMeshAgent.destination);
-                Handles.DrawSolidDisc(navMeshAgent.destination, new Vector3(0, 1, 0), 0.1f);
-                Handles.DrawWireDisc(navMeshAgent.destination, new Vector3(0, 1, 0), navMeshAgent.stoppingDistance);
             }
         }
     }
