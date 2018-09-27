@@ -160,7 +160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4187068893896964}
-  - component: {fileID: 114455088859074484}
+  - component: {fileID: 114835717708443152}
   - component: {fileID: 114936645733200856}
   - component: {fileID: 114323108300252462}
   - component: {fileID: 114999843594506404}
@@ -6402,35 +6402,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114455088859074484
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1083351766544182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6905e484db758441ab527b6d31c95fde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  godMode: 0
-  unlimitedMana: 0
-  animatorController: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
-  animatorOverrideController: {fileID: 22100000, guid: e92f24f13a6764b40bb121d6a2e3d168,
-    type: 2}
-  characterAvatar: {fileID: 9000000, guid: a177b0e6ff26a894180468c168e802cc, type: 3}
-  animatorForwardCap: 1
-  audioSourceSpatialBlend: 0.5
-  colliderCenter: {x: 0, y: 1.03, z: 0}
-  colliderRadius: 0.2
-  colliderHeight: 1.02
-  moveSpeedMultiplier: 0.8
-  animationSpeedMultiplier: 1.3
-  movingTurnSpeed: 1000
-  stationaryTurnSpeed: 1000
-  moveThreshold: 1
-  navMeshAgentSteeringSpeed: 1
-  navMeshAgentStoppingDistance: 1.3
 --- !u!114 &114677980991204380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6445,6 +6416,40 @@ MonoBehaviour:
   baseDamage: 30
   currentWeaponConfig: {fileID: 11400000, guid: 7ec92a3cd61783847b2f3f9e2d5f9843,
     type: 2}
+--- !u!114 &114835717708443152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1083351766544182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988e82482b93aa7438ba3bc2dcd62965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  godMode: 0
+  unlimitedMana: 0
+  animatorController: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
+  animatorOverrideController: {fileID: 22100000, guid: e92f24f13a6764b40bb121d6a2e3d168,
+    type: 2}
+  characterAvatar: {fileID: 9000000, guid: a177b0e6ff26a894180468c168e802cc, type: 3}
+  animatorForwardCap: 1
+  audioSourceSpatialBlend: 0.5
+  colliderCenter: {x: 0, y: 1.03, z: 0}
+  colliderRadius: 0.2
+  colliderHeight: 2.03
+  moveSpeedMultiplier: 0.8
+  animationSpeedMultiplier: 1.3
+  movingTurnSpeed: 360
+  stationaryTurnSpeed: 180
+  moveThreshold: 1
+  navMeshAgentSteeringSpeed: 1
+  navMeshAgentStoppingDistance: 1.3
+  experiencePoints: 0
+  level: 1
+  vitality: 10
+  strength: 10
+  dexterity: 10
 --- !u!114 &114893989107781130
 MonoBehaviour:
   m_ObjectHideFlags: 1

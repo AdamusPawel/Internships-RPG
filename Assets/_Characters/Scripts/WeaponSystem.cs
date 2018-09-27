@@ -164,20 +164,22 @@ namespace RPG.Characters
 
         float CalculateDamage()
         {
-            return Random.Range((int)currentWeaponConfig.GetMinDamage(), (int)currentWeaponConfig.GetMaxDamage());
+            return Random.Range((int)currentWeaponConfig.GetMinDamage(), (int)currentWeaponConfig.GetMaxDamage() + 1);
         }
 
         // animation events handlers
         public void Hit()
         {
-            Debug.Log(target + " gets hit");
-            target.GetComponent<HealthSystem>().TakeDamage(CalculateDamage());
+            float dmg = CalculateDamage();
+            target.GetComponent<HealthSystem>().TakeDamage(dmg);
+            Debug.Log(target + " gets hit for " + dmg + " dmg");
         }
 
         public void Shoot()
         {
-            Debug.Log(target + " gets hit");
-            target.GetComponent<HealthSystem>().TakeDamage(CalculateDamage());
+            float dmg = CalculateDamage();
+            target.GetComponent<HealthSystem>().TakeDamage(dmg);
+            Debug.Log(target + " gets hit for " + dmg + " dmg");
         }
     }
 }
