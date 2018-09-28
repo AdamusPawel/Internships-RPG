@@ -25,7 +25,7 @@ namespace RPG.Characters
         public delegate void OnItemChanged();
         public OnItemChanged onItemChangedCallback;
 
-        public int space = 2;
+        public int space = 20;
         public List<Item> items = new List<Item>();
 
         public bool Add(Item item)

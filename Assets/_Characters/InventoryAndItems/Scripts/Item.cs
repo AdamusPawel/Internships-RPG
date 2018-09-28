@@ -2,7 +2,7 @@
 
 namespace RPG.Characters
 {
-    [CreateAssetMenu(fileName = "New Menu", menuName = ("RPG/Item"))]
+    [CreateAssetMenu(fileName = "New Item", menuName = ("RPG/Item"))]
     public class Item : ScriptableObject
     {
 
@@ -16,6 +16,11 @@ namespace RPG.Characters
             //something have to happen
 
             Debug.Log("Item" + name + " got used!");
+        }
+
+        public void RemoveFromInventory()
+        {
+            Inventory.instance.Remove(this);
         }
     }
 }

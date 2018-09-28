@@ -15,6 +15,7 @@ namespace RPG.Characters
         SpecialAbilities abilities;
         WeaponSystem weaponSystem;
         Interactable interactable;
+        [SerializeField] Interactable focus;
 
         void Start()
         {
@@ -118,9 +119,15 @@ namespace RPG.Characters
         {
             if (Input.GetMouseButton(0))
             {
+                RemoveFocus();
                 weaponSystem.StopAttacking();
                 character.SetDestination(destination);
             }
+        }
+
+        private void RemoveFocus()
+        {
+            focus = null;
         }
 
         bool IsTargetInRange(GameObject target)
@@ -154,8 +161,12 @@ namespace RPG.Characters
             if (Input.GetMouseButtonDown(1) && IsTargetInRange(interactable.gameObject))
             {
                 weaponSystem.StopAttacking();
-                // TODO Intearct();
-                interactable.Interact();
+                // TODO Interact();
+                if (interactable != null)
+                {
+                    SetFocus(interactable);
+                    interactable.Interact();
+                }
             }
             else if (Input.GetMouseButtonDown(1) && !IsTargetInRange(interactable.gameObject))
             {
@@ -164,6 +175,11 @@ namespace RPG.Characters
                 StartCoroutine(MoveAndInteract(interactable));
             }
         }
+
+         void SetFocus(Interactable newFocus)
+         {
+             focus = newFocus;
+         }
 
         IEnumerator MoveToTarget(GameObject target)
         {
@@ -190,6 +206,7 @@ namespace RPG.Characters
         IEnumerator MoveAndInteract(Interactable interactable)
         {
             yield return StartCoroutine(MoveToTarget(interactable.gameObject));
+            focus = interactable;
             interactable.Interact();
         }
     }

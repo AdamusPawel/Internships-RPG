@@ -2,7 +2,7 @@
 
 namespace RPG.Characters
 {
-    [CreateAssetMenu(menuName = ("RPG/Weapon"))]
+    [CreateAssetMenu(menuName = ("RPG/Weapon Config"))]
     public class WeaponConfig : ScriptableObject
     {
         public Transform gripTransform;
